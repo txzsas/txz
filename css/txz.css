@@ -1,0 +1,603 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+body {
+	margin: 0; padding: 0;
+	color: #000; background-color: #fff;
+	font-family: "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+	font-size: 16px; font-weight: 400; line-height: 1;
+	}
+body#index {
+	padding:20px 0 0;
+	}
+.inactivo body {
+	font-size: 16px; line-height: 1.25;
+	}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block;}
+p, dl, multicol {
+    display: block;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+strong { font-weight: bold; }
+
+h1 {
+	line-height: 1.45; font-weight: 400; margin: 0 0 1em;
+	 }
+.entradas h1:first-child {
+
+	 }
+.entradas p + h1 {
+	margin: 2.5em 0 1.5em;
+	 }
+h2, h3 {
+	line-height: 1;
+	 }
+h2 {
+	margin: 1em 0 .75em; font-weight: 400;
+	}
+h2:first-child {
+    margin-top: 0;
+    }
+.entradas h2 {
+	font-weight: bold;
+	}
+#searchResult.entradas h2 {
+	font-weight: normal;
+	}
+#ay2 h2 {
+	text-align:center; margin-top:1.5em;
+	}
+#ay2 h2 span {
+	display: block; margin-top:1.5em;
+	}
+#papersList h2, #onePaper h2 {
+	font-weight: bold;
+	}
+#onePaper h2 {
+	line-height: 1.4; margin-top: 2em;
+	}
+#croads h2, #croads h3 {
+	line-height: 1.25;
+	 }
+h3 {
+    margin: 24px 0 12px; font-weight: 400;
+    }
+h3 span {
+    display: block; margin: 12px 0 0;
+    }
+
+/*
+p:first-child, h2 + p, h1 + p, h1:first-child, h2:first-child, aside ul li:first-child {
+    margin-top: 0 !important;
+    }
+ */
+p {
+	margin: .5em 0 0; line-height: 1.35;
+	}
+#copyrightCtner + p {
+    margin-top: 5em;
+}
+.entradas p {
+	margin-top: 0; text-indent: 1.5em;
+	}
+#searchToken, #searchSummary, #searchNoResult {
+	text-indent: 0;
+	}
+#ay1 p, .ay1 p, #searchResult .ay1 p.para {
+	text-indent: -2em; margin-left: 2em;
+	}
+#ay1 .editorNote p {
+	text-indent: 1.5em; margin-left: 0;
+	}
+#fob p {
+    overflow: visible;
+    position: relative;
+}
+#onePaper p.quote {
+	margin: 0.25em 0 1.25em ;
+	}
+#onePaper p.dailyPlan {
+	margin: 2em 0 .25em; font-weight: bold;
+	}
+#onePaper p.compilationsRefPara{
+	margin-bottom: 2em;
+	}
+p.sub + p { margin-top: 2em; }
+.top0 { margin-top: 0; }
+.top1, .entradas p.top1, #ay1 p.top1, .ay1 p.top1 {
+	margin-top: .75em;
+	}
+#Foundations-of-Buddhism .top1 {
+	margin-top: 1.5em;
+	}
+.para, .entradas p.para {
+	margin-top: 1.75em; text-indent: 0;
+	}
+#ay1 p.para, .top2, .entradas p.top2, #ay1 p.top2,
+.ay1 p.para, .ay1 p.top2 { margin-top: 2em; }
+.top4, .entradas p.top4, #ay1 p.top4, .ay1 p.top4 { margin-top: 4em; }
+.i4 { padding-left: 2em; }
+
+#searchResult p.para {
+	margin-top: .75em;
+	}
+.entradas p:last-child {
+	padding-bottom: 3em;
+	}
+#searchResult.entradas p:last-child {
+    padding-bottom: 0;
+}
+
+.entradas p.separador {
+	margin: 2em 0; text-indent: 0; text-align: center;
+	}
+
+#index li.separador {
+    line-height: 1;
+    margin: 1em 0;
+    }
+#ayHRLet p.separador {
+	margin: 1em 0; padding-right: 1em;
+	}
+.entradas p.bookYear,.entradas p.titulo {
+	text-indent: 0;
+	}
+#ayHRLet p.letNr { display: none; }
+#ayHRLet p.letDate {
+	text-align: right; margin: 3em 0 1em; font-style: italic;
+	padding-right: 3em;
+	}
+ #ayHRLet h3 + p.letDate {
+	margin-top: 0;
+	}
+
+ul, li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	}
+ul li {
+	list-style: none outside none;
+	}
+ul.bul {
+	text-indent: -24px; margin:.75em 0;
+	}
+ul.tight {
+	margin:0 !important;
+	}
+ul.bul li {
+	padding-left: 24px; text-indent:-24px; margin-top: 8px;
+	}
+ul.tight li {
+	margin-top: 0px;
+	}
+ul.bul li:before {
+   content: "•";
+   font-size: 100%;
+   padding-right: 18px;
+}
+.cont ul li.headerStyle:before {
+   content: "";
+   font-size: inherit;
+   padding-right: 0;
+}
+ol li { line-height: 1.35; list-style-type: decimal; }
+#fob ol { margin-left: 3em; }
+#fob ol.footnotes { margin-left: 0; }
+.botPad { padding-bottom: .5em;}
+a, a:link, a:visited, a:hover {
+	text-decoration: none; color: #000;
+	}
+a:hover, li#acerca_de:hover {
+	color: #ab0027; cursor: pointer;
+	}
+
+a img { border:0; }
+
+.nolink {
+	cursor: default;
+	}
+.floatEnclosure {
+	float:left; width:100%;
+	}
+.overflowHidden	{
+	overflow: hidden;
+	}
+.floatRight {float: right; width: 48%}
+.floatLeft {float: left; width: 48%}
+#principal {
+	width: 100%;
+	}
+
+header, section, footer, #contenido {
+	margin: 0 auto; width: auto; max-width: 42.1em;
+	}
+header, #index section, #contenido {
+	border-bottom: 1px solid grey; padding-bottom: 1em;
+	}
+#index section { padding-top: 1.5em; }
+#contenido {
+	margin-top: 4em; padding-top: 0; padding-left: 15.5em; position: relative; min-height: 54.5em;
+	}
+#index #contenido {
+	margin-top: 2em; padding-top: 0; padding-left: 0; position: relative; min-height: inherit; border-bottom: 0;
+}
+#pageNav {
+	position: absolute; top: 6px; left: 0; width: 15em;
+	text-align: right; padding: 0 1em 3em 0; border-right: 1px solid grey; line-height: 1.4;
+	opacity: .6;
+	}
+#index #pageNav { display: none; }
+header { text-align: center; }
+header img { display: block; margin: 0 auto; }
+#index #logo { width: 82px; }
+#pageNav #logo { display: inline-block; width: 60px;  }
+#tays { width: 350px; }
+#pageNav #tays { width: 145px; margin-bottom: .5em;  }
+#index #tays {
+    margin-top: 1em;
+    width: 275px;
+}
+#index #inicio {
+	width: 100%; overflow: hidden; padding: 1.5em 0;
+	}
+#inicio nav { float: left; }
+#inicio nav ul { float: left; width: 17em; }
+#inicio li  { line-height: 1.35; }
+#menu1 { text-align: right; padding-right: 1em; }
+#menu2 { padding-left: 1em; border-left: 1px solid grey; margin-top: -3px; }
+
+/* #menu2 li { padding-left: 2em; text-indent: -2em;} */
+#pageNav li.lett { margin: .6em 0 .2em; }
+#pageNav li.titulo, #menu2 li.titulo { margin: .5em 0 .2em; font-weight: 700;}
+.seriesTop { margin-top: .5em; }
+
+#menuToggle{ position: absolute; left: 0; top: -2.5em; height: 16px; width: 68px; display: none;
+	background: url(../images/menu.png) no-repeat 0 0 ; }
+#menuToggle:hover{
+	background-position: 0 -16px ;cursor: pointer; }
+
+#menu2 li.separador { margin: 0.25em 0; }
+#menu1 li.idiomas { margin-top: 1.25em; }
+#menu2 li.titulo1 { margin: 0 0 .5em;}
+
+#idiomas { margin: 1.5em 0 1em; }
+#index #idiomas { margin: 0; }
+#idiomas span { display: inline-block; margin-top: 6px; border: 1px solid #ababab; padding: 0 5px;}
+#idiomas span:hover {
+	background-color: #ab0027; color: #fff; border-color: #840023; cursor: pointer;
+	}
+#idiomas span:hover a {
+	color: #fff;
+	}
+html[lang='ru'] #idiomas span[data-flag="ru"]:hover,
+html[lang='en'] #idiomas span[data-flag="en"]:hover,
+html[lang='es'] #idiomas span[data-flag="es"]:hover,
+html[lang='it'] #idiomas span[data-flag="it"]:hover,
+html[lang='is'] #idiomas span[data-flag="is"]:hover {
+	background-color: inherit; color: inherit; border-color: #ababab; cursor: default;
+	}
+
+footer { text-align: center; padding: 1em 0 3em 240px; line-height: 1.25; }
+#index footer { padding: 0em 0 3em 0; }
+#contact { }
+#index section p { padding: 0 40px; }
+#index #acerca_section p { padding: 0 10px 0 70px; }
+#index #acerca_section form { padding: 10px 0 0 70px; }
+#index footer p { margin: 0; }
+#acerca_section { display: none; }
+span.m {
+	font-size: larger; font-weight: bold; padding-left: 2px;
+	}
+
+.ftnote { margin-top: 1em; }
+.editorNote {
+	border-top: 1px solid #000; padding-top: 2em; margin: 3em 0 1.5em;
+	}
+section#compilationsList { overflow: hidden; /* background-color: #acacac; */ }
+#compilationsList ul { float: left; }
+#compilationsList li { display: inline-block; float: left; width: 26%; text-indent: -3%;
+	padding-left: 3%; line-height: 1.125; margin: .5em 0 0 6%; /* background-color: #cacaca; */
+	}
+#compilationsList li:nth-child(3n+1) { margin-left: 0; clear: left; }
+#compilationsList h2 { clear: left; padding-top: 2em; }
+#compilationsList h2:first-child { padding-top: 0; }
+
+section#papersList { overflow: hidden; /* background-color: #acacac; */ }
+#papersList ul { float: left; width: 100%;}
+ul#prevPapers { width: 98%; padding: 6px 1%; height: 600px; overflow: auto; border: 1px solid #cacaca;
+  overflow-y: scroll;overflow-x: hidden;}
+#papersList li { display: inline-block; float: left; width: 42%; text-indent: -3%;
+	padding-left: 3%; line-height: 1.125; margin: .3em 0 0 6%; /* background-color: #cacaca; */
+	}
+#papersList li:nth-child(2n+1) { margin-left: 0; clear: left; }
+#papersList h2 { clear: left; padding-top: 2em; font-weight: bold; }
+#papersList h2:first-child { padding-top: 0; }
+
+#onePaper { margin-top: 2em; }
+#onePaper h1 { margin: 0 0 .75 0; line-height: 1.125; }
+#onePaper p.sub { margin: 1em 0 0; line-height: 1; font-style: italic;  }
+#onePaper p.sub + p.sub { margin: .3em 0 1em;  }
+#papersBtn {
+	text-align: right; margin-top: -3em; padding-right: 2em;
+	}
+#papersBtn input:hover {
+	cursor: pointer;
+	}
+.ed { color: #515151; }
+
+#tDownloads { margin: 1.5em 0; }
+#tDownloads td { padding: .25em 0 .25em .75em; }
+#tDownloads td:first-child { padding-left: 0; }
+#tDownloads td { padding-left: 3em; }
+#tBuy { width: 36em; }
+#tBuy td { padding: .25em 0 .25em .75em; }
+#tBuy td:first-child { padding-left: 0; width: 70%;}
+
+#searchForm { margin-top: 2em; float: left; }
+
+#searchForm ul { float: left; width: 16em; }
+#searchForm li  { line-height: 1.75; }
+#searchForm li:hover  { cursor: pointer; }
+
+#searchInput { width: 20em; font-size: inherit;}
+#searchBut { font-size: inherit; width: inherit;}
+#searchBut:hover { cursor: pointer;}
+
+#selectAll:hover, #deselectAll:hover {  cursor: pointer;}
+
+#searchNoResult, #searchSummary { margin-top: 1em; }
+p.searchBookTitle { margin: 2em 0 0; font-weight: 600; text-indent: 0; }
+p.searchEachTitle { margin: 1em 0 0; text-indent: 0;}
+p.searchEachTitle + p { margin-top: 0.75em;}
+.searchBookTitle:hover { cursor: pointer;}
+.searchBookTitle:hover:after { content: " \2B06"; font-family: "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif; font-weight: 400; font-style: normal; }
+#searchSummary + .searchBookTitle:hover:after { content: none; }
+#searchSummary + .searchBookTitle:hover { cursor: default;}
+.searchSel{ background-color: #BEBEBE; }
+.searchSe{ background-color: #000; color: #fff; }
+#searchSummary { line-height: 1.4; }
+#bookErr, #lengthErr { display: none; color: red; }
+
+#copyrightCtner { position: absolute; right: 0; top: 0.8em; width: 80%;
+	}
+#copyrightOpen {
+	position: absolute; right: 1em; top: -0.6em; width: auto; text-align: right; opacity: .6;
+	}
+#copyrightOpen:hover {
+	cursor: pointer;
+	}
+#copyright {
+	margin: 2em 0; background-color: #e2e2e2; padding: 2em;
+	position: absolute;  z-index: 10; top: -500px; right:1em;
+	width: inherit; text-align: right;
+	font-family: "Trebuchet MS","Times New Roman", sans serif; line-height: 1.125;
+	}
+html[lang='it']	#Leaves-of-Moryas-Garden-I span.i4 {
+	display: block;
+	}
+
+#copyright p {text-indent: 0; margin-top: .75em; margin-left: 0;}
+#copyrightClose { font-weight: bold; position: absolute; right:0; top:0; line-height: 1; }
+
+@-moz-document url-prefix() {
+       #copyrightClose  { padding: 0; }
+}
+
+#copyrightClose:hover { color: #c00d2a;  cursor: pointer;}
+
+#croads li {
+	margin-top: .6em;
+	}
+#croads h2 {
+	margin: 2em 0 1em;
+	}
+#croads h2.superChapter {
+	margin: 4em 0 2em; font-weight: bold;
+	}
+#croads ul li { padding-left: 2em; }
+#glosText { line-height: 1.25; }
+/*start tooltip fob */
+a.ft, a.ft:link,
+a.ft:visited, a.ft:hover {
+	color: #3c3b3d;
+	}
+a.ft:hover {
+	color: #c00d2a; cursor: pointer;
+	}
+.ui-widget-content {
+    background-color: #eaeaea;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+}
+.ui-widget {
+    font-size: 1em;
+    line-height: 1.4;
+}
+.ui-tooltip {
+    box-shadow: 0 0 1px #AAAAAA;
+    max-width: 300px;
+    padding: 12px;
+    position: absolute;
+    z-index: 9999;
+    border-width: 1px;
+    font-size: inherit;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-radius: 4px;
+}
+/*end fob */
+
+footer span.ru { display: none;}
+html[lang='ru'] footer span.ru { display: inline;}
+
+/***FONTS ************************************************************************/
+#toLoad p.sub, #copyrightOpen, em,
+#onePaper .source, #ayHRLet p.letNr, #ayHRLet p.letDate, .ed,
+.editorNote h3, #pageNav li.titulo, #menu2 li.titulo,
+.searchEachTitle, #onePaper h3, #onePaper p.dailyPlan,
+#onePaper p.compilationsRefPara {
+	font-family: "Trebuchet MS","Times New Roman", serif; font-style: italic;
+	}
+h1, .f24 { font-size: 1.5em; }
+.f22, #onePaper h1 { font-size: 1.375em; }
+p.signsAY { font-size: 1.35em; }
+.f20, h2,
+#croads h2.superChapter, #curPaper, #pageNav li.lett,
+#searchToken, #searchNoResult  { font-size: 1.25em; }
+.f18, p.bookYear, p.signsAY, li.titulo1,
+h2, #searchToken, #searchNoResult, .searchBookTitle { font-size: 1.125em; }
+#index li.titulo1, #copyright { font-size: 1.0625em; }
+#searchForm input, #papersBtn input {
+	font-size: 1em;
+	}
+#onePaper .source, #onePaper .source1, #papersList li,
+#compilationsList li, #selectAll, #deselectAll {
+	font-size: .9325em;
+	}
+#pageNav, footer { font-size: .875em; }
+#copyrightOpen, #copyrightClose { font-size: .8125em; }
+
+.uCase { text-transform: uppercase; }
+.lH1 { line-height: 1; }
+.lH11 { line-height: 1.1; }
+.lH12 { line-height: 1.2; }
+.lH13 { line-height: 1.3 !important; }
+.lH15 { line-height: 1.5 !important; }
+
+.w500 { font-weight: 500; }
+.w400 { font-weight: 400; }
+.w600 { font-weight: 600; }
+.clogoRed { color: #ab0027; }
+.cfde6a5 { color: #fde6a5; }
+.ce80d0d { color: #e80d0d; }
+.cff2121 { color: #ff2121; }
+.c000 { color: #000; }
+
+@media (max-width: 58em) {
+	#contenido { padding-right: 2em; }
+	#index #contenido { padding-right: 0; }
+}
+@media (max-width: 53em) {
+	.newLine { display: block; }
+	#compilationsList li {
+	    width: 42%;
+	}
+	#compilationsList li:nth-child(2n+1) {
+	    clear: left;
+	    margin-left: 0;
+	}
+	#tBuy { width: 100%; }
+}
+@media (max-width: 46.5em) {
+	#menuToggle{ display: block; }
+	#index #menuToggle{ display: none; }
+	#pageNav {
+		left: -30em; right: auto; background-color: #fff; z-index: 9;
+		}
+	#contenido {
+	    padding-left: 0; width: 75%; padding-right: 0;
+	    }
+	#copyrightCtner { width: 93%; }
+	#copyright { right:0; }
+	#index #contenido {
+		 width: 100%;
+		}
+	#copyrightOpen {
+	    top: -4.3em;
+	    }
+	 footer {
+	    padding-left: 0;
+	}
+	#inicio nav {
+	    float: left; width: 100%;
+	}
+	#inicio nav ul {
+	    width: 54%;
+	}
+	#inicio nav ul#menu1 {
+	    padding-right: 2%; width: 40%;
+	}
+	footer {
+	    font-size: .8125em;
+		}
+}
+@media (max-width: 36em) {
+	#contenido {
+	    width: 85%;
+	    }
+	#index #contenido {
+		 width: 100%;
+		}
+	#searchInput { width: 15em; }
+}
+@media (max-width: 30em) {
+	#inicio nav ul {
+	    width: 62%;
+	}
+	#inicio nav ul#menu1 {
+	    padding-right: 2%; width: 30%;
+	}
+	#compilationsList li {
+	    float:none; width: 100%; margin-left: 0;
+	}
+}
+@media (max-width: 24em) {
+	html[lang='es'] #inicio nav  li,
+	html[lang='it'] #inicio nav  li {
+	    font-size: .825em;
+		}
+	#inicio nav  li {
+	    font-size: .925em;
+		}
+}
+@media print {
+	body {
+		font: 12pt Georgia, "Times New Roman", Times, serif;
+		line-height: 1.3;
+		}
+	#contenido {
+	    margin-top: 0;
+	    padding-left: 0;
+	    width: 90%;
+	}
+   #pageNav, footer, #papersBtn,
+   #papersList > h1, #papersList > h2, #papersList > ul { display: none; }
+   h1 {
+	font-size: 16pt;
+	}
+
+  p { font-size: 12pt; }
+}
+
+/*
+.flag {
+	width: 16px;
+	height: 11px;
+	background:url(../images/flags.png) no-repeat
+}
+
+.flag.flag-de {background-position: -16px 0}
+.flag.flag-es {background-position: -32px 0}
+.flag.flag-fr {background-position: 0 -11px}
+.flag.flag-is {background-position: -16px -11px}
+.flag.flag-it {background-position: -32px -11px}
+.flag.flag-ru {background-position: 0 -22px}
+.flag.flag-us {background-position: -16px -22px}
+ */
