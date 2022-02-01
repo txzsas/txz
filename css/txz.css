@@ -287,6 +287,7 @@ header img { display: block; margin: 0 auto; }
 	color: #fff;
 	}
 html[lang='ru'] #idiomas span[data-flag="ru"]:hover,
+html[lang='pt'] #idiomas span[data-flag="pt"]:hover,
 html[lang='en'] #idiomas span[data-flag="en"]:hover,
 html[lang='es'] #idiomas span[data-flag="es"]:hover,
 html[lang='it'] #idiomas span[data-flag="it"]:hover,
