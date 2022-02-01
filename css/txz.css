@@ -489,102 +489,24 @@ h2, #searchToken, #searchNoResult, .searchBookTitle { font-size: 1.125em; }
 .ce80d0d { color: #e80d0d; }
 .cff2121 { color: #ff2121; }
 .c000 { color: #000; }
+@media only screen and (max-width: 600px){
+	#contenido {
+		margin: 0 auto !important;
+		width: auto !important; 
+		max-width: 100% !important;
+	}
+	header, section, footer{
+		font-size: 16px !important;
+	}
+	#menu1{
+		width: 28% !important;
+	}
+	#menu2{
+		width: 54% !important;
+	}
+}
 
-@media (max-width: 58em) {
-	#contenido { padding-right: 2em; }
-	#index #contenido { padding-right: 0; }
-}
-@media (max-width: 53em) {
-	.newLine { display: block; }
-	#compilationsList li {
-	    width: 42%;
-	}
-	#compilationsList li:nth-child(2n+1) {
-	    clear: left;
-	    margin-left: 0;
-	}
-	#tBuy { width: 100%; }
-}
-@media (max-width: 46.5em) {
-	#menuToggle{ display: block; }
-	#index #menuToggle{ display: none; }
-	#pageNav {
-		left: -30em; right: auto; background-color: #fff; z-index: 9;
-		}
-	#contenido {
-	    padding-left: 0; width: 75%; padding-right: 0;
-	    }
-	#copyrightCtner { width: 93%; }
-	#copyright { right:0; }
-	#index #contenido {
-		 width: 100%;
-		}
-	#copyrightOpen {
-	    top: -4.3em;
-	    }
-	 footer {
-	    padding-left: 0;
-	}
-	#inicio nav {
-	    float: left; width: 100%;
-	}
-	#inicio nav ul {
-	    width: 54%;
-	}
-	#inicio nav ul#menu1 {
-	    padding-right: 2%; width: 40%;
-	}
-	footer {
-	    font-size: .8125em;
-		}
-}
-@media (max-width: 36em) {
-	#contenido {
-	    width: 85%;
-	    }
-	#index #contenido {
-		 width: 100%;
-		}
-	#searchInput { width: 15em; }
-}
-@media (max-width: 30em) {
-	#inicio nav ul {
-	    width: 62%;
-	}
-	#inicio nav ul#menu1 {
-	    padding-right: 2%; width: 30%;
-	}
-	#compilationsList li {
-	    float:none; width: 100%; margin-left: 0;
-	}
-}
-@media (max-width: 24em) {
-	html[lang='es'] #inicio nav  li,
-	html[lang='it'] #inicio nav  li {
-	    font-size: .825em;
-		}
-	#inicio nav  li {
-	    font-size: .925em;
-		}
-}
-@media print {
-	body {
-		font: 12pt Georgia, "Times New Roman", Times, serif;
-		line-height: 1.3;
-		}
-	#contenido {
-	    margin-top: 0;
-	    padding-left: 0;
-	    width: 90%;
-	}
-   #pageNav, footer, #papersBtn,
-   #papersList > h1, #papersList > h2, #papersList > ul { display: none; }
-   h1 {
-	font-size: 16pt;
-	}
 
-  p { font-size: 12pt; }
-}
 
 /*
 .flag {
