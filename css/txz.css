@@ -57,6 +57,9 @@ h2:first-child {
 .entradas h2 {
 	font-weight: bold;
 	}
+.opacity{
+	opacity: 1 !important;
+}	
 #searchResult.entradas h2 {
 	font-weight: normal;
 	}
@@ -90,9 +93,6 @@ p:first-child, h2 + p, h1 + p, h1:first-child, h2:first-child, aside ul li:first
 p {
 	margin: .5em 0 0; line-height: 1.35;
 	}
-#copyrightCtner + p {
-    margin-top: 5em;
-}
 .entradas p {
 	margin-top: 0; text-indent: 1.5em;
 	}
@@ -226,7 +226,7 @@ a img { border:0; }
 	}
 
 header, section, footer, #contenido {
-	margin: 0 auto; width: auto; max-width: 42.1em;
+	margin: 0 auto; width: auto; max-width: 56.1em;
 	}
 header, #index section, #contenido {
 	border-bottom: 1px solid grey; padding-bottom: 1em;
@@ -258,7 +258,7 @@ header img { display: block; margin: 0 auto; }
 	width: 100%; overflow: hidden; padding: 1.5em 0;
 	}
 #inicio nav { float: left; }
-#inicio nav ul { float: left; width: 17em; }
+#inicio nav ul { float: left; width: 25em; }
 #inicio li  { line-height: 1.35; }
 #menu1 { text-align: right; padding-right: 1em; }
 #menu2 { padding-left: 1em; border-left: 1px solid grey; margin-top: -3px; }
