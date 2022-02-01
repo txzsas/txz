@@ -504,6 +504,24 @@ h2, #searchToken, #searchNoResult, .searchBookTitle { font-size: 1.125em; }
 	#menu2{
 		width: 54% !important;
 	}
+	#pageNav{
+		position: initial;
+		width: 100%;
+	}
+	#contenido{
+		padding:0 1em;
+	}
+	#ay1 p, .ay1 p, #searchResult .ay1 p.para{
+		text-indent: 0 !important;
+		margin-left: 0 !important;
+	}
+	#ay1 > p.separador{
+		margin-left: 0 !important;
+		text-align: center !important;
+	}
+	footer{
+		padding: 1em 0 6em 0px;
+	}
 }
 
 
