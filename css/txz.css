@@ -281,20 +281,27 @@ header img { display: block; margin: 0 auto; }
 #index #idiomas { margin: 0; }
 #idiomas span { display: inline-block; margin-top: 6px; border: 1px solid #ababab; padding: 0 5px;}
 #idiomas span:hover {
-	background-color: #ab0027; color: #fff; border-color: #840023; cursor: pointer;
+	background-color: #ababab; color: #fff; border-color: #ababab; cursor: pointer;
 	}
 #idiomas span:hover a {
 	color: #fff;
 	}
-html[lang='ru'] #idiomas span[data-flag="ru"]:hover,
+/*html[lang='ru'] #idiomas span[data-flag="ru"]:hover,
 html[lang='pt'] #idiomas span[data-flag="pt"]:hover,
 html[lang='en'] #idiomas span[data-flag="en"]:hover,
 html[lang='es'] #idiomas span[data-flag="es"]:hover,
 html[lang='it'] #idiomas span[data-flag="it"]:hover,
 html[lang='is'] #idiomas span[data-flag="is"]:hover {
 	background-color: inherit; color: inherit; border-color: #ababab; cursor: default;
-	}
-
+	}*/
+html[lang='ru'] #idiomas span[data-flag="ru"],
+html[lang='pt'] #idiomas span[data-flag="pt"],
+html[lang='en'] #idiomas span[data-flag="en"],
+html[lang='es'] #idiomas span[data-flag="es"],
+html[lang='it'] #idiomas span[data-flag="it"],
+html[lang='is'] #idiomas span[data-flag="is"] {
+	background-color: #ababab; color: white; border-color: #ababab; cursor: default;
+}
 footer { text-align: center; padding: 1em 0 3em 240px; line-height: 1.25; }
 #index footer { padding: 0em 0 3em 0; }
 #contact { }
@@ -490,6 +497,11 @@ h2, #searchToken, #searchNoResult, .searchBookTitle { font-size: 1.125em; }
 .ce80d0d { color: #e80d0d; }
 .cff2121 { color: #ff2121; }
 .c000 { color: #000; }
+
+#aprox_1 #idiomas{
+	margin: 0 0 0.5em;
+}
+
 @media only screen and (max-width: 600px){
 	#contenido {
 		margin: 0 auto !important;
