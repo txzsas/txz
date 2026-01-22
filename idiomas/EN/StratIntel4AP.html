@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4AP Strategic Advisory Hub | 2025 Intelligence</title>
+    <!-- SEO Protection: Prevent indexing -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>4AP Intelligence Hub | Strategy by Vortexian</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --4ap-red: #c50000;
@@ -106,16 +108,6 @@
 
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        .competitor-badge {
-            background: #f3f4f6;
-            padding: 4px 10px;
-            border-radius: 2px;
-            font-size: 9px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: var(--4ap-grey);
-        }
-
         .luxe-table th {
             font-size: 11px;
             font-weight: 900;
@@ -144,17 +136,17 @@
             <h1 class="text-4xl font-black tracking-tighter text-[#c50000]">4AP</h1>
             <div class="h-8 w-px bg-gray-200"></div>
             <div class="flex flex-col">
-                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">Strategic Advisory Hub</span>
-                <span class="text-sm font-bold text-gray-800 uppercase">2025 Intelligence Briefing</span>
+                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">Strategic Intelligence Hub</span>
+                <span class="text-sm font-bold text-gray-800 uppercase">2025 Market Briefing</span>
             </div>
         </div>
         <div class="flex items-center gap-8">
-            <div class="text-right border-r pr-8 border-gray-100">
-                <p class="text-[9px] uppercase font-bold text-gray-400 mb-1">Authorization</p>
-                <p class="text-[11px] font-black uppercase tracking-widest">Executive Level / NY</p>
+            <div class="text-right">
+                <p class="text-[9px] uppercase font-bold text-gray-400 mb-1">Architected by</p>
+                <p class="text-[11px] font-black uppercase tracking-widest text-[#c50000]">Vortexian</p>
             </div>
             <button onclick="toggleAi()" class="bg-black text-white px-6 py-3 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#c50000] transition flex items-center gap-3">
-                <i class="fa-solid fa-shield-halved"></i> Advisory Council
+                <i class="fa-solid fa-user-tie"></i> Advisory Council
             </button>
         </div>
     </header>
@@ -169,53 +161,56 @@
 
     <!-- Main Content Display -->
     <main id="mainContent" class="flex-grow overflow-y-auto p-12 bg-[#fafafa]">
-        <!-- Content will be dynamically rendered here -->
+        <!-- Content dynamically injected here -->
     </main>
 
     <!-- Transparency Footer -->
     <footer class="bg-white border-t border-gray-100 py-4 px-10 flex justify-between items-center text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">
-        <div>Data Intelligence: Aggregated Market Indices & Industry Performance Benchmarks 2025</div>
-        <div>Confidential Internal Briefing &copy; 2026 4ArtPartners</div>
+        <div>Data Intelligence: Public Market Data Benchmarks & Aggregated Retail Trends 2025</div>
+        <div>Confidential Strategic Intelligence &copy; 2026 4ArtPartners | Vortexian</div>
     </footer>
 
     <!-- Advisory Sidebar -->
     <aside id="aiSidebar" class="ai-sidebar shadow-2xl">
         <div class="sidebar-header flex justify-between items-center">
             <div class="flex flex-col">
-                <span class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-1">Advisory Insight</span>
-                <h3 class="font-black uppercase tracking-tight text-xl">Strategic Council</h3>
+                <span class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-1">Vortexian Advisory Council</span>
+                <h3 class="font-black uppercase tracking-tight text-xl">Command Center</h3>
             </div>
             <button onclick="toggleAi()" class="text-white/30 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div id="aiResponse" class="p-10 flex-grow overflow-y-auto text-sm leading-relaxed text-gray-700 bg-white">
             <div class="flex flex-col items-center justify-center h-full text-center space-y-4">
                 <i class="fa-solid fa-scale-balanced text-4xl text-gray-100"></i>
-                <p class="italic text-gray-400 font-medium">Please select a "Strategic Spark" from the dashboard to review counsel on specific market variables.</p>
+                <p class="italic text-gray-400 font-medium">Please select a "Strategic Spark" from the dashboard to review the council's analysis on specific market variables.</p>
             </div>
         </div>
-        <div class="p-10 border-t bg-gray-50">
-            <p class="text-[9px] text-center text-gray-400 font-bold uppercase mb-4 tracking-widest">Global Intelligence System v2.5</p>
-            <button onclick="triggerFlashBriefing()" class="w-full bg-[#c50000] text-white py-4 font-black text-[10px] uppercase tracking-[0.2em] shadow-lg hover:bg-black transition">
-                Generate Flash Briefing
+        <div class="p-10 border-t bg-gray-50 flex flex-col gap-4">
+            <div class="text-center">
+                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-1">Strategic Contact</p>
+                <p class="text-xs font-black text-black">Carlos Gomez</p>
+                <p class="text-[10px] text-gray-500 font-medium lowercase">cg@vortexian.com</p>
+            </div>
+            <button onclick="triggerSpark('Global')" class="w-full bg-[#c50000] text-white py-4 font-black text-[10px] uppercase tracking-[0.2em] shadow-lg hover:bg-black transition">
+                Generate Full Executive Briefing
             </button>
         </div>
     </aside>
 
     <script>
         let currentTab = 'overview';
-        const apiKey = ""; // Provided by environment
-
+        
         // --- PRE-LOADED STRATEGIC COUNSEL (THE SPARKS) ---
         const advisoryCounsel = {
-            'NY': "New York represents our highest AOV ceiling. Buying patterns in Zip Codes like 10021 and 11201 indicate a preference for 'Quiet Luxury'. Marketing should lean into exclusivity and scarcity. Sell the Art Prints as curated limited editions rather than decor items.",
-            'FL': "Florida (specifically Weston/Miami/Boca) is the heart of our community engagement. The 30% penetration GAP is your biggest growth lever. Marketing must focus on 'Heritage Social'—the idea that 4AP objects are the centerpiece of cultural hosting. Sell Porcelain & Menorahs for the dining table.",
-            'CA': "California tech wealth (Newport/LA) values 'Aesthetic Calm'. These buyers want 'Ready-to-Ship' luxury. Leverage current stock to fulfill immediate gratification needs. The narrative should focus on 'Modern Sanctuary'.",
-            '1stDibs': "1stDibs owns the 'Trust' factor. They win because they verify every antique. 4AP must counter by providing 'Certificates of Authenticity' and artist-signed provenance, turning new items into future heirlooms.",
-            'Joopiter': "Joopiter is proof that hype beats catalog size. Use their 'Drop' model for new Frank Alcock releases. Don't keep everything in stock; create windows of desire to drive the FOMO instinct.",
-            'Saatchi': "Saatchi wins on generic search. 4AP must win on 'Niche Dominance'. Do not compete for 'Modern Art'; compete for 'Contemporary Geometric Judaica' and 'Architectural Tableware'.",
-            'Uncommon': "Uncommon Goods is a gifting giant. 4AP should move from 'Gift' to 'Investment'. Shift the storytelling from 'Unique Item' to 'Living Legacy'. Every porcelain piece is a sculpture that functions.",
-            'AOV': "Our $2,200 AOV Target is feasible through 'Prestige On-Demand'. By keeping inventory costs low and perceived value high through artist branding, we maximize net margins compared to mass-market rivals.",
-            'Global': "The strategy for 2025 is clear: Solidify the 'Power Triad' first. Florida is your defensive moat; New York is your prestige engine; California is your scale experimental lab. Avoid spreading budget thin in low-yield states."
+            'NY': "NY Analysis: Manhattan and Brooklyn indicate a preference for 'Quiet Luxury'. Marketing should pivot toward intellectual exclusivity. 1stDibs currently dominates this space through perceived heritage; 4AP counters via 'Contemporary Relevance'.",
+            'FL': "FL Analysis: The Weston/Miami corridor is your highest growth lever. Community-led referrals are worth 10x SEO traffic. Narrative: 'Setting the Table of Heritage'.",
+            'CA': "CA Analysis: Newport/LA buyers seek 'Aesthetic Flow' and 'Ready-to-Ship' fulfillment. Tech wealth values geometry and artisan signatures. Scarcity is the primary driver.",
+            '1stDibs': "1stDibs owns the verification moat. 4AP must implement 'Certificate of Provenance' signals to erode their antique monopoly.",
+            'Joopiter': "Joopiter proves that Social Scarcity beats catalog size. Adopt their 'Drop' model quarterly for Art Prints to drive urgency.",
+            'Saatchi': "Saatchi wins on volume but loses on curation. Own the 'Geometric Judaica' niche where they are too broad to be personal.",
+            'Uncommon': "Uncommon Goods is a gifting giant. 4AP must move from 'Gift' to 'Heirloom'. Messaging: These objects aren't just for others; they are for your own legacy.",
+            'AOV': "The $2,200 AOV target is the boutique sweet spot. It allows for high-touch service while maintaining scalable production under our production-on-demand model.",
+            'Global': "The Vortexian roadmap for 2025: Leverage Florida's diaspora as the cash-flow anchor, while using NY prestige to drive Art Print volume. California acts as the scale experimental lab for new geometric launches. Contact cg@vortexian.com for deeper tactical dives."
         };
 
         // --- UI CORE ---
@@ -239,8 +234,8 @@
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
                         <div class="lg:col-span-2 space-y-10">
                             <div class="card border-l-8 border-[#c50000] relative">
-                                <h3 class="text-2xl font-black uppercase mb-2 tracking-tighter">The "Power Triad" Index</h3>
-                                <p class="text-[10px] text-gray-400 mb-8 font-bold uppercase tracking-widest">Aggregate Market Analysis | 147 Core Sales Nodes</p>
+                                <h3 class="text-2xl font-black uppercase mb-2 tracking-tighter">US Performance Heat Index</h3>
+                                <p class="text-[10px] text-gray-400 mb-8 font-bold uppercase tracking-widest">Internal Sales Data Correlation: NY, CA, FL Hubs</p>
                                 <div class="h-[380px]"><canvas id="triadChart"></canvas></div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -248,23 +243,21 @@
                                     <div class="card p-6 border border-gray-100 flex flex-col justify-between hover:border-red-500 transition">
                                         <div>
                                             <h4 class="font-black text-[#c50000] text-[10px] mb-2 uppercase">${state} Intelligence</h4>
-                                            <p class="text-[11px] font-bold text-gray-400 mb-4 uppercase tracking-tighter">${state === 'NY' ? 'Intellectual Status' : state === 'FL' ? 'Heritage & Social' : 'Aesthetic Calm'}</p>
+                                            <p class="text-[11px] font-bold text-gray-400 mb-4 uppercase tracking-tighter">${state === 'NY' ? 'Intellectual Flex' : state === 'FL' ? 'Heritage Anchor' : 'Aesthetic Flow'}</p>
                                         </div>
-                                        <button onclick="triggerSpark('${state}')" class="btn-spark self-start">Request Counsel</button>
+                                        <button onclick="triggerSpark('${state}')" class="btn-spark self-start">Consult Council</button>
                                     </div>
                                 `).join('')}
                             </div>
                         </div>
-                        <div class="space-y-10">
-                            <div class="card">
-                                <h3 class="text-xl font-black uppercase mb-6 tracking-tighter">US Market Opportunity</h3>
-                                <div class="h-[300px]"><canvas id="shareChart"></canvas></div>
-                                <div class="mt-8 p-6 bg-gray-50 border-t border-gray-100">
-                                    <p class="text-[10px] font-black uppercase text-[#c50000] mb-3">Analyst's Summary</p>
-                                    <p class="text-[13px] font-medium leading-relaxed italic text-gray-500">
-                                        "The 15% niche opportunity is where the highest margins reside. 4AP should not aim for the 40% mass-market share but for the high-ticket exclusivity of the boutique segment."
-                                    </p>
-                                </div>
+                        <div class="card">
+                            <h3 class="text-xl font-black uppercase mb-6 tracking-tighter">Boutique Market Opportunity</h3>
+                            <div class="h-[300px]"><canvas id="shareChart"></canvas></div>
+                            <div class="mt-8 p-6 bg-gray-50 border-t border-gray-100">
+                                <p class="text-[10px] font-black uppercase text-[#c50000] mb-3">Vortexian Strategic Note</p>
+                                <p class="text-[13px] font-medium leading-relaxed italic text-gray-500">
+                                    "Exclusivity is the only sustainable strategy for 4AP. Avoid competing with aggregators; own the cultural identity segment."
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -274,62 +267,41 @@
                 container.innerHTML = `
                     <div class="space-y-10 animate-in fade-in duration-500">
                         <div class="flex justify-between items-end">
-                            <h2 class="text-3xl font-black uppercase tracking-tighter">Market Battleground 2025</h2>
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Competitor Profiling vs. 4AP</p>
+                            <h2 class="text-3xl font-black uppercase tracking-tighter">Market Battleground & Depth Index</h2>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Positioning Audit 2025</p>
                         </div>
                         
-                        <div class="card p-0 overflow-hidden">
-                            <table class="w-full luxe-table">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th>Competitor</th>
-                                        <th>Business Profile</th>
-                                        <th>Key KPI (Est.)</th>
-                                        <th>Core Strength</th>
-                                        <th>Strategic Pivot</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="font-black">1stDibs</td>
-                                        <td>UHNW Antiques & Designer Marketplace</td>
-                                        <td>$8.5k AOV</td>
-                                        <td>Verification & Trust</td>
-                                        <td><button onclick="triggerSpark('1stDibs')" class="btn-spark">Spark</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-black">Joopiter</td>
-                                        <td>Cultural Hype & Auction Drop Model</td>
-                                        <td>80% Earned Traffic</td>
-                                        <td>Scarcity & Storytelling</td>
-                                        <td><button onclick="triggerSpark('Joopiter')" class="btn-spark">Spark</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-black">Saatchi Art</td>
-                                        <td>Mass Discovery & Emerging Art</td>
-                                        <td>$1.2k AOV</td>
-                                        <td>SEO & Catalog Depth</td>
-                                        <td><button onclick="triggerSpark('Saatchi')" class="btn-spark">Spark</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-black">Uncommon Goods</td>
-                                        <td>Premium Gifting & Artisan Retail</td>
-                                        <td>$145 AOV</td>
-                                        <td>Story of the Maker</td>
-                                        <td><button onclick="triggerSpark('Uncommon')" class="btn-spark">Spark</button></td>
-                                    </tr>
-                                    <tr class="bg-red-50/30">
-                                        <td class="font-black text-[#c50000]">4AP (Target)</td>
-                                        <td>Modern Heritage & Identity Curator</td>
-                                        <td>$2.2k AOV Target</td>
-                                        <td>Niche Cultural Depth</td>
-                                        <td><button onclick="triggerSpark('AOV')" class="btn-spark">Spark</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="card">
+                                <h4 class="font-black text-xs uppercase mb-6 border-b pb-2">Market Positioning Bubble Map</h4>
+                                <div class="h-[400px]"><canvas id="bubbleChart"></canvas></div>
+                                <p class="mt-4 text-[10px] text-gray-400 font-bold uppercase text-center">X: Quantity of SKUs | Y: Avg Ticket (AOV) | Bubble Size: Market Influence</p>
+                            </div>
+
+                            <div class="card p-0 overflow-hidden">
+                                <table class="w-full luxe-table">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th>Player</th>
+                                            <th>SKUs</th>
+                                            <th>AOV (Est.)</th>
+                                            <th>Strength</th>
+                                            <th>Strategy</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td class="font-black">1stDibs</td><td>1M+</td><td>$8.5k</td><td>Trust</td><td><button onclick="triggerSpark('1stDibs')" class="btn-spark">Spark</button></td></tr>
+                                        <tr><td class="font-black">Joopiter</td><td>Hundreds</td><td>$12k+</td><td>Scarcity</td><td><button onclick="triggerSpark('Joopiter')" class="btn-spark">Spark</button></td></tr>
+                                        <tr><td class="font-black">Saatchi Art</td><td>500k+</td><td>$1.2k</td><td>Scale</td><td><button onclick="triggerSpark('Saatchi')" class="btn-spark">Spark</button></td></tr>
+                                        <tr><td class="font-black">Uncommon</td><td>5k+</td><td>$145</td><td>Gifting</td><td><button onclick="triggerSpark('Uncommon')" class="btn-spark">Spark</button></td></tr>
+                                        <tr class="bg-red-50/30"><td class="font-black text-[#c50000]">4AP</td><td>Curated</td><td>$2.2k</td><td>Identity</td><td><button onclick="triggerSpark('AOV')" class="btn-spark">Spark</button></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 `;
+                initBattlegroundCharts();
             } else if (currentTab === 'digital') {
                 container.innerHTML = `
                     <div class="max-w-5xl mx-auto space-y-10 animate-in slide-in-from-bottom duration-500">
@@ -339,12 +311,12 @@
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="card bg-[#1a1a1a] text-white">
-                                <h4 class="font-black text-[10px] uppercase mb-4 tracking-widest text-red-500">Organic Domination</h4>
-                                <p class="text-sm text-gray-300 leading-relaxed italic">"Own the niche. While Saatchi fights for 'Art', 4AP should own 'Contemporary Judaica Heritage'. This is the high-intent traffic we need to capture."</p>
+                                <h4 class="font-black text-[10px] uppercase mb-4 tracking-widest text-red-500">Media Mix Insight</h4>
+                                <p class="text-sm text-gray-300 leading-relaxed italic">"While Saatchi burns budget on Paid Search, 4AP must leverage Organic Social Hype and Direct Retention. Our Paid Media should be laser-targeted Retargeting, not Broad Discovery."</p>
                             </div>
                             <div class="card border-2 border-dashed border-gray-200 flex flex-col justify-center">
-                                <h4 class="font-black text-[10px] uppercase mb-2 tracking-widest text-gray-400">Social Scarcity</h4>
-                                <p class="text-sm font-medium">80% of Joopiter's revenue is event-driven. 4AP should move to a 'Drop' model to maximize California/NY social engagement.</p>
+                                <h4 class="font-black text-[10px] uppercase mb-2 tracking-widest text-gray-400">Paid Media Strategy</h4>
+                                <p class="text-sm font-medium">NY/CA markets require a 30% Paid Media boost in Video Content to compete with high-end gallery impressions.</p>
                             </div>
                         </div>
                     </div>
@@ -355,20 +327,21 @@
                     <div class="max-w-4xl mx-auto py-12 space-y-16 animate-in fade-in duration-700">
                         <div class="text-center">
                             <h2 class="text-7xl font-black uppercase tracking-tighter mb-4">The <span class="text-[#c50000]">Verdict</span></h2>
-                            <p class="text-lg font-bold text-gray-400 uppercase tracking-[0.3em]">Senior Advisory Council Briefing | NY</p>
+                            <p class="text-lg font-bold text-gray-400 uppercase tracking-[0.3em]">Tactical Growth Architecture by Vortexian</p>
+                            <p class="text-[10px] text-gray-400 font-black uppercase mt-2">Draper-Grade Persuasion for 4ArtPartners</p>
                         </div>
                         <div class="space-y-12">
                             <div class="card border-l-8 border-[#c50000] bg-gray-50/50 p-12">
-                                <p class="text-3xl font-black leading-tight mb-8">"Stop selling furniture. Start selling a cure for the modern exile. Identity is the only currency that matters in the premium segment."</p>
+                                <p class="text-3xl font-black leading-tight mb-8">"Stop selling furniture. Start selling the feeling of never leaving home. Identity is the only currency that matters."</p>
                                 <hr class="w-20 border-black border-2 mb-8">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm text-gray-600 leading-relaxed">
                                     <div class="space-y-4">
-                                        <h4 class="font-black text-black uppercase">I. Consolidation of the Triad</h4>
-                                        <p>Saturate Florida first. The diaspora is your anchor. Use the 'Charger Plates' as a gateway into the dining ritual, then upsell the legacy Art Prints.</p>
+                                        <h4 class="font-black text-black uppercase">I. The Florida Fortress</h4>
+                                        <p>Solidify the diaspora anchor. The 'Charger Plate' isn't a product; it's a gateway into the ritual of a high-value home.</p>
                                     </div>
                                     <div class="space-y-4">
-                                        <h4 class="font-black text-black uppercase">II. The Scarcity Pivot</h4>
-                                        <p>Emulate Joopiter’s 'Drop' strategy. Turn Art Prints from catalog items into 'Event Editions'. Use California's tech-wealth for the first experiment.</p>
+                                        <h4 class="font-black text-black uppercase">II. The Scarcity Drop</h4>
+                                        <p>Pivot Art Prints into 'Limited Event' status. Use NY's intellectual ego and CA's tech-desire to drive quarterly sell-outs.</p>
                                     </div>
                                 </div>
                             </div>
@@ -391,12 +364,7 @@
                         borderWidth: 0,
                     }]
                 },
-                options: { 
-                    maintainAspectRatio: false, 
-                    plugins: { 
-                        legend: { position: 'bottom', labels: { font: { size: 9, weight: '900' }, padding: 25 } } 
-                    } 
-                }
+                options: { maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { font: { size: 9, weight: '900' }, padding: 25 } } } }
             });
 
             const triadCtx = document.getElementById('triadChart').getContext('2d');
@@ -405,17 +373,37 @@
                 data: {
                     labels: ['New York', 'California', 'Florida'],
                     datasets: [
-                        { label: 'Market Incumbents', data: [85, 90, 70], backgroundColor: '#1a1a1a', barThickness: 30 },
-                        { label: '4AP Penetration Index', data: [15, 10, 30], backgroundColor: '#c50000', barThickness: 30 }
+                        { label: 'Incumbents', data: [85, 90, 70], backgroundColor: '#1a1a1a', barThickness: 30 },
+                        { label: '4AP Opportunity', data: [15, 10, 30], backgroundColor: '#c50000', barThickness: 30 }
                     ]
                 },
                 options: { 
                     maintainAspectRatio: false, 
-                    scales: { 
-                        y: { beginAtZero: true, max: 100, ticks: { font: { weight: 'bold' } } },
-                        x: { ticks: { font: { weight: 'bold' } } }
+                    scales: { y: { beginAtZero: true, max: 100 } }
+                }
+            });
+        }
+
+        function initBattlegroundCharts() {
+            const ctx = document.getElementById('bubbleChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bubble',
+                data: {
+                    datasets: [
+                        { label: '1stDibs', data: [{x: 100, y: 85, r: 25}], backgroundColor: '#1a1a1a' },
+                        { label: 'Saatchi', data: [{x: 80, y: 30, r: 20}], backgroundColor: '#4b5563' },
+                        { label: 'Joopiter', data: [{x: 20, y: 95, r: 22}], backgroundColor: '#1a1a1a' },
+                        { label: 'Uncommon', data: [{x: 60, y: 15, r: 18}], backgroundColor: '#9ca3af' },
+                        { label: '4AP', data: [{x: 25, y: 55, r: 30}], backgroundColor: '#c50000' }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { min: 0, max: 110, title: { display: true, text: 'Quantity of SKUs (Scale)' } },
+                        y: { min: 0, max: 110, title: { display: true, text: 'Avg Ticket Value (AOV)' } }
                     },
-                    plugins: { legend: { position: 'top', align: 'end', labels: { font: { weight: 'bold' } } } }
+                    plugins: { legend: { position: 'top' } }
                 }
             });
         }
@@ -427,49 +415,37 @@
                 data: {
                     labels: ['1stDibs', 'Saatchi Art', 'Joopiter', '4AP Target'],
                     datasets: [
-                        { label: 'Organic SEO', data: [70, 60, 10, 30], backgroundColor: '#1a1a1a' },
-                        { label: 'Social Drop / Scarcity', data: [10, 15, 80, 60], backgroundColor: '#c50000' },
-                        { label: 'Retention / Direct', data: [20, 25, 10, 10], backgroundColor: '#9ca3af' }
+                        { label: 'Organic SEO', data: [55, 40, 5, 25], backgroundColor: '#1a1a1a' },
+                        { label: 'Paid Media', data: [15, 30, 5, 25], backgroundColor: '#c50000' },
+                        { label: 'Social Drop / Hype', data: [10, 10, 80, 40], backgroundColor: '#4a4a4a' },
+                        { label: 'Retention / Direct', data: [20, 20, 10, 10], backgroundColor: '#9ca3af' }
                     ]
                 },
                 options: {
                     indexAxis: 'y',
                     maintainAspectRatio: false,
                     scales: { x: { stacked: true }, y: { stacked: true } },
-                    plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold' } } } }
+                    plugins: { legend: { position: 'bottom' } }
                 }
             });
         }
 
-        // --- STRATEGIC ENGINE ---
         function triggerSpark(target) {
             const sidebar = document.getElementById('aiSidebar');
             const responseArea = document.getElementById('aiResponse');
-            
             if(!sidebar.classList.contains('open')) toggleAi();
-            
-            responseArea.innerHTML = '<div class="flex flex-col items-center justify-center h-64 gap-6"><div class="loader"></div><p class="text-[9px] font-black uppercase tracking-[0.4em] text-gray-400">Synthesizing Advisory Brief...</p></div>';
-            
-            // Artificial delay to mimic "Consulting"
+            responseArea.innerHTML = '<div class="flex flex-col items-center justify-center h-64 gap-6"><div class="loader"></div><p class="text-[9px] font-black uppercase tracking-[0.4em] text-gray-400">Synthesizing Brief...</p></div>';
             setTimeout(() => {
                 const insight = advisoryCounsel[target] || advisoryCounsel['Global'];
                 responseArea.innerHTML = `
                     <div class="animate-in fade-in duration-700">
-                        <p class="text-[#c50000] font-black text-[10px] uppercase mb-6 tracking-widest border-b pb-2">Strategic Advisory Note: ${target}</p>
+                        <p class="text-[#c50000] font-black text-[10px] uppercase mb-6 tracking-widest border-b pb-2">Vortexian Strategic Advisory: ${target}</p>
                         <div class="prose prose-sm font-medium text-gray-700 leading-relaxed italic">
                             ${insight.replace(/\. /g, '.<br><br>')}
-                        </div>
-                        <div class="mt-10 p-4 border-l-2 border-black bg-gray-50">
-                            <p class="text-[10px] font-black uppercase mb-1">Deduction</p>
-                            <p class="text-xs">Based on current market volatility and competitor positioning for Q1 2026.</p>
                         </div>
                     </div>
                 `;
             }, 800);
-        }
-
-        function triggerFlashBriefing() {
-            triggerSpark('Global');
         }
 
         window.onload = render;
