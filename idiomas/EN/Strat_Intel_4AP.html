@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Privacy Shield: Ensures the report remains private and unindexed -->
     <meta name="robots" content="noindex, nofollow">
-    <title>4AP Intelligence Hub | Vortexian Advisory</title>
+    <title>Intelligence Hub | 2026 Market Strategic Advisory </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --4ap-red: #c50000;
@@ -33,10 +33,10 @@
         .nav-tab {
             padding: 12px 24px;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 0.75rem;
+            font-weight: 800;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
             color: var(--4ap-grey);
             border-bottom: 4px solid transparent;
             transition: all 0.2s ease;
@@ -50,14 +50,14 @@
         .card {
             background: white;
             border: 1px solid #e5e7eb;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 0;
         }
 
         .btn-spark {
             background-color: var(--4ap-red);
             color: white;
-            padding: 6px 12px;
+            padding: 6px 14px;
             font-weight: 800;
             font-size: 10px;
             text-transform: uppercase;
@@ -67,9 +67,8 @@
 
         .btn-spark:hover { background-color: var(--4ap-black); }
 
-        /* Sidebar UI */
         .ai-sidebar {
-            width: 460px;
+            width: 480px;
             border-left: 1px solid #e5e7eb;
             background: #ffffff;
             display: flex;
@@ -98,12 +97,12 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--4ap-grey);
-            padding: 1rem;
+            padding: 1.25rem;
             border-bottom: 2px solid #f3f4f6;
         }
 
         .luxe-table td {
-            padding: 1rem;
+            padding: 1.25rem;
             font-size: 13px;
             border-bottom: 1px solid #f3f4f6;
         }
@@ -131,66 +130,66 @@
             <h1 class="text-4xl font-black tracking-tighter text-[#c50000]">4AP</h1>
             <div class="h-8 w-px bg-gray-200"></div>
             <div class="flex flex-col">
-                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">Intelligence Hub</span>
-                <span class="text-sm font-bold text-gray-800 uppercase tracking-tight">2025 Market Strategic Advisory</span>
+                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">Strategy Advisory Council</span>
+                <span class="text-sm font-bold text-gray-800 uppercase tracking-tight">2025 Market Intelligence</span>
             </div>
         </div>
         <div class="flex items-center gap-8">
             <div class="text-right">
-                <p class="text-[9px] uppercase font-bold text-gray-400 mb-1">Architected by</p>
+                <p class="text-[9px] uppercase font-bold text-gray-400 mb-1">Developed by</p>
                 <p class="text-[11px] font-black uppercase tracking-widest text-[#c50000]">Vortexian</p>
             </div>
             <button onclick="toggleAi()" class="bg-black text-white px-6 py-3 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#c50000] transition flex items-center gap-3">
-                <i class="fa-solid fa-file-invoice-dollar"></i> Advisory Council
+                <i class="fa-solid fa-file-shield"></i> Strategic Advisory
             </button>
         </div>
     </header>
 
     <!-- Navigation -->
     <nav class="bg-white px-10 flex border-b border-gray-100 shadow-sm">
-        <div class="nav-tab active" onclick="switchTab('overview', this)">US Performance</div>
+        <div class="nav-tab active" onclick="switchTab('overview', this)">Geographic Performance</div>
         <div class="nav-tab" onclick="switchTab('battleground', this)">Market Battleground</div>
         <div class="nav-tab" onclick="switchTab('digital', this)">Growth Architecture</div>
         <div class="nav-tab" onclick="switchTab('narrative', this)">The Verdict</div>
     </nav>
 
-    <!-- Main View -->
+    <!-- Main Content -->
     <main id="mainContent" class="flex-grow overflow-y-auto p-12 bg-[#fafafa]">
-        <!-- Content injected here via JS -->
+        <!-- Content injected via switchTab -->
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 py-4 px-10 flex justify-between items-center">
-        <div class="flex flex-col">
-            <span class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">Confidential Strategic Intelligence &copy; 2026 4ArtPartners | Vortexian</span>
-            <span class="text-[8px] text-gray-300 font-medium uppercase mt-1 italic tracking-widest">PRIVATE REPORT: This document is not indexed by search engines. Access is restricted to designated URL holders only.</span>
+    <footer class="bg-white border-t border-gray-100 py-6 px-10 flex justify-between items-center">
+        <div class="flex flex-col text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">
+            <span>Confidential Intelligence Briefing &copy; 2026 4ArtPartners | Vortexian</span>
+            <span class="text-[8px] text-gray-300 font-medium italic mt-2">PRIVATE ACCESS ONLY: This report is strictly non-indexed and restricted to designated stakeholders.</span>
         </div>
-        <div class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">Source: Public Retail Benchmarks 2025</div>
+        <div class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">Source: Public Retail Benchmarks & Market Analytics 2025</div>
     </footer>
 
     <!-- Advisory Sidebar -->
     <aside id="aiSidebar" class="ai-sidebar shadow-2xl">
         <div class="sidebar-header flex justify-between items-center">
             <div class="flex flex-col">
-                <span class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-1">Vortexian Strategic Advisory</span>
-                <h3 class="font-black uppercase tracking-tight text-xl">Command Center</h3>
+                <span class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-1">Vortexian Strategic Council</span>
+                <h3 class="font-black uppercase tracking-tight text-xl">Intelligence Center</h3>
             </div>
             <button onclick="toggleAi()" class="text-white/30 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div id="aiResponse" class="p-10 flex-grow overflow-y-auto text-sm leading-relaxed text-gray-700 bg-white">
             <div class="flex flex-col items-center justify-center h-full text-center space-y-4">
-                <i class="fa-solid fa-compass text-4xl text-gray-100"></i>
+                <i class="fa-solid fa-map-location-dot text-4xl text-gray-100"></i>
                 <p class="italic text-gray-400 font-medium">Please select a "Strategic Spark" from the hub to review targeted analysis on regional or competitive variables.</p>
             </div>
         </div>
         <div class="p-10 border-t bg-gray-50 flex flex-col gap-4">
             <div class="text-center">
-                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-1">Strategic Advisor</p>
-                <p class="text-xs font-black text-black">Carlos Gomez</p>
+                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-1">Strategic Director</p>
+                <p class="text-xs font-black text-black uppercase">Carlos Gomez</p>
                 <p class="text-[10px] text-gray-500 font-medium lowercase">cg@vortexian.com</p>
             </div>
             <button onclick="triggerSpark('Global')" class="w-full bg-[#c50000] text-white py-4 font-black text-[10px] uppercase tracking-[0.2em] shadow-lg hover:bg-black transition">
-                Generate Strategy Briefing
+                Generate Full Strategy Briefing
             </button>
         </div>
     </aside>
@@ -200,26 +199,26 @@
         
         // --- PRE-LOADED STRATEGIC ANALYSIS ---
         const advisoryCounsel = {
-            'NY': "NY High-Net-Worth Profile: Purchases in Zip Codes like 10013 (TriBeCa) and 10023 (UES) confirm a move toward 'Silent Luxury'. Marketing should emphasize 'Modern Heritage' over religious utility. Art Prints are the primary volume driver here, serving as intellectual artifacts for elite residences.",
-            'FL': "FL Regional Moat: Weston, Miami Shores, and Aventura show a 30% penetration gap. This market is driven by 'Heritage Hospitality'. The dinner table is the primary social altar. Strategy: Aggressive bundles of Charger Plates and Porcelain sets to saturate the hosting ritual.",
-            'CA': "CA Aesthetic Market: Newport Beach and LA tech wealth value 'Geometric Harmony'. These buyers suffer from decision fatigue; 'Ready-to-Ship' availability is more critical than customization. Inventory must be held for rapid fulfillment to dominate the impulse-luxe segment.",
-            '1stDibs': "1stDibs Dominance: Built on a multi-vendor trust model and $8.5k AOV. 4AP vulnerability: Heritage verification. Action: Implement 'Artist Provenance' digital certificates for every sale to emulate gallery-level trust.",
-            'Joopiter': "Joopiter Drop Model: Their 80% Social traffic efficiency is a roadmap. 4AP should move to a quarterly 'Drop' cycle for high-ticket porcelain releases to create the scarcity trigger that NY/CA buyers demand.",
-            'Saatchi': "Saatchi SEO Machine: They own 'Modern Art' keywords but lose on cultural specificity. 4AP must own 'Contemporary Ritual Design' and 'Geometric Judaica' to bypass their mass-market reach.",
-            'Uncommon': "Uncommon Goods Gifting: They capture the 'Purposeful Gift' segment. 4AP must pivot to 'The Heirloom Gift'. Messaging should shift from the object's uniqueness to its ability to be passed down through generations.",
-            'Artware': "Artware Peer Analysis: Closest competitor in functional art. They win on 'Artist Collaboration' variety. 4AP's advantage is the depth of the Frank Alcock brand identity. We own the artist story; they own a roster.",
-            'AOV': "The $70 AOV reflects our entry-level strategic positioning for high-velocity items (Porcelain/Prints). This allows 4AP to scale volume within the 'Modern Heritage' segment before upselling higher-ticket investment pieces.",
-            'Global': "Vortexian's 2025 Verdict: The 'Power Triad' is the path to growth. Florida provides the cash-flow moat; New York provides the prestige anchor; California provides the scale through tech-elite adoption. Carlos Gomez remains at HQ for further tactical deployment at cg@vortexian.com."
+            'NY': "NY Micro-segment Analysis: Hubs in Brooklyn Heights, Upper West Side, and Port Washington confirm a demand for 'Intellectual Minimalist Art'. These bubbles represent high concentration nodes where B2B interior design partnerships are crucial for saturating the local residential market. Strategy: Clone this footprint in similar look-alike zones like Greenwich, CT.",
+            'FL': "FL Social Saturation: The Weston/Miami Shores/Aventura triangle is our 'Diaspora Fortress'. Sales 2025 show these nodes respond best to heritage-driven social hosting narratives. Strategy: Identify look-alike bubbles in Parkland and Coral Gables for immediate B2B and pop-up gallery expansion.",
+            'CA': "CA Aesthetic Clusters: Pacific Palisades, Newport Beach, and Palm Desert are our winning nodes. These tech-elite bubbles value 'Geometric Order' and 'Made-to-Order' agility. Strategy: Replicate the 'Pacific Palisades' model in Santa Barbara and Atherton through targeted high-end retail activations.",
+            '1stDibs': "1stDibs Counter-move: They win on 'Marketplace Scale'. 4AP counters by winning on 'Cluster Depth'. We don't need a million SKUs; we need the 10 right pieces for the 100 right houses in our identified zip codes.",
+            'Joopiter': "Joopiter Hype Loop: Their social efficacy is a roadmap for our NY/CA 'Edition Drops'. However, 4AP’s On-Demand model ensures zero inventory-carry while scaling these hype events.",
+            'Saatchi': "Saatchi SEO Gap: They are too broad. 4AP should saturate the micro-keywords of our winning bubles (e.g., 'Modern Judaica for Miami Homes') to capture high-intent localized traffic.",
+            'Uncommon': "Uncommon Goods Gifting: They capture the 'One-off' buyer. 4AP must use B2B partnerships in our winning zip codes to transition from a 'Gift Shop' to an 'Interior Design Standard'.",
+            'Artware': "Artware Peer Analysis: Closest peer. Our advantage is the singular brand authority of Frank Alcock. We saturate a lifestyle; they curate a list.",
+            'AOV': "The $70 USD AOV is our velocity engine. In 2025, this price point in Porcelain allows us to penetrate a home's ritual, creating a pipeline for the $2,000+ investment art prints.",
+            'Global': "Vortexian's 2025 Roadmap: We win by 'Cluster Saturation'. We have identified the bubbles in CA, NY, and FL that respond to our DNA. Now, we use look-alike modeling to expand into demographically identical zip codes via E-commerce, B2B, and localized Offline events. Carlos Gomez at cg@vortexian.com is the lead for this tactical rollout."
         };
 
-        // --- DATA VERIFICATION ---
+        // --- DATASET CALIBRATION ---
         const competitorData = [
             { name: '1stDibs', skus: 1200000, aov: 8500, x: 100, y: 85, r: 25 },
             { name: 'Saatchi Art', skus: 500000, aov: 1200, x: 85, y: 35, r: 20 },
             { name: 'Joopiter', skus: 500, aov: 12000, x: 15, y: 95, r: 22 },
             { name: 'Artware', skus: 350, aov: 850, x: 20, y: 30, r: 18 },
             { name: 'Uncommon Goods', skus: 8000, aov: 145, x: 60, y: 15, r: 15 },
-            { name: '4AP (Target)', skus: 100, aov: 70, x: 10, y: 10, r: 35 }
+            { name: '4AP (Target)', skus: 99, aov: 70, x: 10, y: 8, r: 35 }
         ];
 
         // --- UI CORE ---
@@ -243,15 +242,15 @@
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
                         <div class="lg:col-span-2 space-y-10">
                             <div class="card border-l-8 border-[#c50000]">
-                                <h3 class="text-2xl font-black uppercase mb-2 tracking-tighter">US Performance Index</h3>
-                                <p class="text-[10px] text-gray-400 mb-8 font-bold uppercase tracking-widest">Aggregate Sales Analysis: NY, CA, FL Concentration</p>
+                                <h3 class="text-2xl font-black uppercase mb-2 tracking-tighter">US Performance Matrix</h3>
+                                <p class="text-[10px] text-gray-400 mb-8 font-bold uppercase tracking-widest">Aggregate Data: NY, CA, FL Concentration Hubs</p>
                                 <div class="h-[380px]"><canvas id="triadChart"></canvas></div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 ${['NY', 'FL', 'CA'].map(state => `
                                     <div class="card p-6 border border-gray-100 flex flex-col justify-between hover:border-red-500 transition">
                                         <div>
-                                            <h4 class="font-black text-[#c50000] text-[10px] mb-2 uppercase">${state} Hub</h4>
+                                            <h4 class="font-black text-[#c50000] text-[10px] mb-2 uppercase">${state} Intelligence</h4>
                                             <p class="text-[11px] font-bold text-gray-400 mb-4 uppercase tracking-tighter">${state === 'NY' ? 'Intellectual Flex' : state === 'FL' ? 'Heritage Anchor' : 'Aesthetic Flow'}</p>
                                         </div>
                                         <button onclick="triggerSpark('${state}')" class="btn-spark self-start">Consult Advisory</button>
@@ -260,12 +259,12 @@
                             </div>
                         </div>
                         <div class="card">
-                            <h3 class="text-xl font-black uppercase mb-6 tracking-tighter">Competitive Opportunity</h3>
+                            <h3 class="text-xl font-black uppercase mb-6 tracking-tighter">Market Penetration</h3>
                             <div class="h-[300px]"><canvas id="shareChart"></canvas></div>
                             <div class="mt-8 p-6 bg-gray-50 border-t border-gray-100">
-                                <p class="text-[10px] font-black uppercase text-[#c50000] mb-3">Vortexian Strategic Summary</p>
+                                <p class="text-[10px] font-black uppercase text-[#c50000] mb-3">Vortexian Strategic Note</p>
                                 <p class="text-[13px] font-medium leading-relaxed italic text-gray-500">
-                                    "Leverage the 15% niche boutique gap. In high-end retail, curation drives margins more efficiently than mass-market aggregation."
+                                    "Saturation over breadth. Winning in 2025 means dominating specific high-value bubbles before expanding to look-alike clusters."
                                 </p>
                             </div>
                         </div>
@@ -277,36 +276,29 @@
                     <div class="space-y-10 animate-in fade-in duration-500">
                         <div class="flex justify-between items-end">
                             <h2 class="text-3xl font-black uppercase tracking-tighter">Market Depth Bubble Index</h2>
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Bubble Radius = Market Influence / Brand Authority Index</p>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Bubble Radius = Brand Authority Index</p>
                         </div>
-                        
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                             <div class="card">
                                 <h4 class="font-black text-xs uppercase mb-6 border-b pb-4">Positioning Matrix</h4>
                                 <div class="h-[450px]"><canvas id="bubbleChart"></canvas></div>
                                 <div class="mt-6 flex justify-between text-[9px] font-bold uppercase text-gray-400 tracking-widest">
-                                    <span>X: Catalog Scale (Quantity of SKUs)</span>
-                                    <span>Y: Average Ticket Value (AOV $)</span>
+                                    <span>X: Scale (Catalog SKUs)</span>
+                                    <span>Y: Pricing (Avg Ticket $)</span>
                                 </div>
                             </div>
-
                             <div class="card p-0 overflow-hidden">
                                 <table class="w-full luxe-table">
                                     <thead class="bg-gray-50">
-                                        <tr>
-                                            <th>Competitor</th>
-                                            <th>Quantity of SKUs</th>
-                                            <th>AOV ($)</th>
-                                            <th>Spark</th>
-                                        </tr>
+                                        <tr><th>Competitor</th><th>Published SKUs</th><th>AOV ($)</th><th>Counsel</th></tr>
                                     </thead>
                                     <tbody>
                                         ${competitorData.map(c => `
-                                            <tr class="${c.name === '4AP (Target)' ? 'bg-red-50/30' : ''}">
+                                            <tr class="${c.name === '4AP (Target)' ? 'bg-red-50/50' : ''}">
                                                 <td class="font-black ${c.name === '4AP (Target)' ? 'text-[#c50000]' : ''}">${c.name}</td>
                                                 <td>${c.skus.toLocaleString()}</td>
                                                 <td class="font-bold">${c.aov.toLocaleString()} USD</td>
-                                                <td><button onclick="triggerSpark('${c.name === '4AP (Target)' ? 'AOV' : c.name}')" class="btn-spark">Advisory</button></td>
+                                                <td><button onclick="triggerSpark('${c.name === '4AP (Target)' ? 'AOV' : c.name}')" class="btn-spark">Spark</button></td>
                                             </tr>
                                         `).join('')}
                                     </tbody>
@@ -326,15 +318,15 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div class="card p-6 bg-[#1a1a1a] text-white">
                                 <h4 class="font-black text-[10px] uppercase mb-4 tracking-widest text-red-500">Paid Media</h4>
-                                <p class="text-[12px] text-gray-300 leading-relaxed italic">"Paid spend in CA/NY should prioritize Video Retargeting. Our organic foundation in FL reduces the need for broad-top-of-funnel acquisition."</p>
+                                <p class="text-[12px] text-gray-300 leading-relaxed italic">"Paid spend in CA/NY should prioritize Video Retargeting on winning micro-segments. Saturate the zip code, not the state."</p>
                             </div>
                             <div class="card p-6">
                                 <h4 class="font-black text-[10px] uppercase mb-4 tracking-widest text-[#c50000]">Organic SEO</h4>
-                                <p class="text-[12px] text-gray-500 leading-relaxed">Own the 'Modern Roots' niche. SEO should capture high-intent users looking for contemporary heritage artifacts.</p>
+                                <p class="text-[12px] text-gray-500 leading-relaxed">Capture high-intent searches in our winning bubbles. Target 'Contemporary Judaica in Miami Shores' style queries.</p>
                             </div>
                             <div class="card p-6">
-                                <h4 class="font-black text-[10px] uppercase mb-4 tracking-widest text-[#c50000]">Social Hype</h4>
-                                <p class="text-[12px] text-gray-500 leading-relaxed">Emulate the Joopiter model. 80% of hype-wealth engagement is driven by limited-time social activations.</p>
+                                <h4 class="font-black text-[10px] uppercase mb-4 tracking-widest text-[#c50000]">Direct B2B</h4>
+                                <p class="text-[12px] text-gray-500 leading-relaxed">Leverage interior design partnerships within our Pacific Palisades and Brooklyn clusters to drive offline authority.</p>
                             </div>
                         </div>
                     </div>
@@ -345,8 +337,8 @@
                     <div class="max-w-4xl mx-auto py-12 space-y-16 animate-in fade-in duration-700">
                         <div class="text-center">
                             <h2 class="text-7xl font-black uppercase tracking-tighter mb-4">The <span class="text-[#c50000]">Verdict</span></h2>
-                            <p class="text-lg font-bold text-gray-400 uppercase tracking-[0.3em]">Strategic Growth Architecture by Vortexian</p>
-                            <p class="text-[10px] text-gray-400 font-black uppercase mt-2 tracking-widest">2025 Market Modeling for 4ArtPartners</p>
+                            <p class="text-lg font-bold text-gray-400 uppercase tracking-[0.3em]">Tactical Growth Strategy by Vortexian</p>
+                            <p class="text-[10px] text-gray-400 font-black uppercase mt-2 tracking-widest">2025 Market Strategic Asset</p>
                         </div>
                         <div class="space-y-12">
                             <div class="card border-l-8 border-[#c50000] bg-gray-50/50 p-12">
@@ -354,12 +346,12 @@
                                 <hr class="w-20 border-black border-2 mb-8">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm text-gray-600 leading-relaxed">
                                     <div class="space-y-6">
-                                        <h4 class="font-black text-black uppercase tracking-widest text-xs">Phase I: The Diaspora Moat</h4>
-                                        <p>Saturate Florida's social corridors. The Charger Plate is the Trojan Horse into the daily hosting rituals of your highest-LTV clients.</p>
+                                        <h4 class="font-black text-black uppercase tracking-widest text-xs">Phase I: Bubble Saturation</h4>
+                                        <p>Based on 2025 sales, we have identified high-yield clusters: <strong>Weston (FL)</strong>, <strong>Brooklyn Heights (NY)</strong>, and <strong>Pacific Palisades (CA)</strong>. We win by saturating these micro-segments through Omnichannel dominance: E-commerce retargeting, B2B interior design partnerships, and localized Offline gallery pop-ups.</p>
                                     </div>
                                     <div class="space-y-6">
-                                        <h4 class="font-black text-black uppercase tracking-widest text-xs">Phase II: Scarcity Architecture</h4>
-                                        <p>Pivot NY/CA to a Scarcity-Drop model. Scarcity drives the ego-purchase in intellectual markets better than constant availability.</p>
+                                        <h4 class="font-black text-black uppercase tracking-widest text-xs">Phase II: Look-alike Expansion</h4>
+                                        <p>Scaling is not about broad reach; it's about 'Look-alike Cloning'. We identify demographically identical bubbles (e.g., Parkland, FL or Santa Barbara, CA) and replicate the winning playbook. The <strong>On-Demand Model</strong> is our engine, allowing us to expand catalog variety without inventory risk.</p>
                                     </div>
                                 </div>
                             </div>
@@ -374,7 +366,7 @@
             new Chart(document.getElementById('shareChart').getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['1stDibs', 'Saatchi Art', 'Uncommon Goods', '4AP Gap'],
+                    labels: ['1stDibs', 'Saatchi Art', 'Uncommon Goods', '4AP Boutique Gap'],
                     datasets: [{
                         data: [40, 25, 20, 15],
                         backgroundColor: ['#1a1a1a', '#4b5563', '#9ca3af', '#c50000'],
@@ -426,9 +418,9 @@
                     labels: ['1stDibs', 'Saatchi', 'Joopiter', 'Artware', 'Uncommon', '4AP Target'],
                     datasets: [
                         { label: 'Organic SEO', data: [50, 45, 5, 25, 20, 25], backgroundColor: '#1a1a1a' },
-                        { label: 'Paid Media', data: [15, 35, 5, 25, 15, 25], backgroundColor: '#c50000' },
-                        { label: 'Social Drop / Hype', data: [10, 10, 80, 40, 15, 40], backgroundColor: '#4b5563' },
-                        { label: 'Direct Retention', data: [25, 10, 10, 10, 50, 10], backgroundColor: '#9ca3af' }
+                        { label: 'Paid Media', data: [15, 30, 5, 20, 15, 25], backgroundColor: '#c50000' },
+                        { label: 'Social Hype', data: [10, 10, 80, 40, 15, 40], backgroundColor: '#4b5563' },
+                        { label: 'Retention / Direct', data: [25, 15, 10, 15, 50, 10], backgroundColor: '#9ca3af' }
                     ]
                 },
                 options: {
@@ -451,10 +443,6 @@
                         <p class="text-[#c50000] font-black text-[10px] uppercase mb-6 tracking-widest border-b pb-2">Vortexian Strategic Advisory: ${target}</p>
                         <div class="prose prose-sm font-medium text-gray-700 leading-relaxed italic">
                             ${insight.replace(/\. /g, '.<br><br>')}
-                        </div>
-                        <div class="mt-10 p-4 border-l-2 border-black bg-gray-50">
-                            <p class="text-[9px] font-black uppercase mb-1">Analytic Insight</p>
-                            <p class="text-[11px]">Deduction based on current market modeling and consumer archetype behavior.</p>
                         </div>
                     </div>
                 `;
