@@ -1,255 +1,495 @@
-<!DOCTYPE HTML>
-<html class="jsOff wf-inactive" lang="en">
+import React, { useState, useEffect, useMemo } from 'react';
+import { 
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, 
+  PieChart, Pie, Cell, BubbleChart, ScatterChart, Scatter, ZAxis
+} from 'recharts';
+import { 
+  ChevronLeft, ChevronRight, Target, BarChart3, Users, Compass, 
+  Zap, Quote, Eye, Globe, MapPin, TrendingUp 
+} from 'lucide-react';
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link href="../../css/txz.css" media="all" rel="stylesheet" type="text/css">
-    <title>
-        Of all movements: Consolidate and grow.
-    </title>
-    <meta content="" name="description">
-    <meta content="notranslate" name="google">
-</head>
+const App = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-<body id="aprox_1">
-    <div id="principal">
-        <div id="contenido">
+  // 4AP Brand Colors
+  const COLORS = {
+    red: '#c50000',
+    black: '#1a1a1a',
+    grey: '#4a4a4a',
+    lightGrey: '#f1f5f9',
+    white: '#ffffff',
+    chart: ['#c50000', '#1a1a1a', '#4a4a4a', '#8a8a8a', '#d1d1d1']
+  };
 
-            <nav id="pageNav" class="opacity">
-                <a href="../../index.html">
-                    <img alt="TXZ logo" id="logo" src="../../img/logo_txz.png" />
-                </a>
-                <br>
-                <ul class="en">
-                    <li id="acerca_de">
-                        About TXZ
-                    </li>
-                    <li>
-                        <a href="recursos.html">
-                            Resources
-                        </a>
-                    </li>
-                    <li>
-                        <a href="gracias.html">
-                            Thanks
-                        </a>
-                    </li>
-                    <li class="separador">
-                        <img alt="separador" src="../../img/separador.gif" />
-                    </li>
-                    <p id="idiomas">
-                        <span>
-                            <a href="../ES/aproximacion2.html">ES</a>
-                        </span>
-                        <br>
-                        <span data-flag="en">
-                            EN
-                        </span>
-                        <br>
-                        <span data-flag="pt">
-                            <a href="../POR/aproximacion2_POR.html">POR</a>
-                        </span>
-                        <br>
-                        <span data-flag="it">
-                            <a href="../IT/aproximacion2_IT.html">IT</a>
-                        </span>
-                    </p>
-                    <li class="separador">
-                        <img alt="separador" src="../../img/separador.gif" />
-                    </li>
-                    <li class="titulo titulo1">
-                        Approximations
-                    </li>
-                    <li>
-                        <a href="aproximacion1_EN.html">
-                            The transformation. The company. The digital.
-                        </a>
-                    </li>
-                    <li>
-                        <a href="aproximacion2_EN.html">
-                            Of all movements: Consolidate and grow.
-                        </a>
-                    </li>
-                    <li>
-                        <a href="aproximacion3_EN.html">
-                            About the unlikely.
-                        </a>
-                    </li>
-                    <li>
-                        <a href="aproximacion4_EN.html">
-                            Publics, markets, borders.
-                        </a>
-                    </li>
-                    <li class="titulo">
-                        Services
-                    </li>
-                    <li>
-                        <a href="servicios1_EN.html">
-                            Definition of value proposition / business model
-                        </a>
-                    </li>
-                    <li>
-                        <a href="servicios2_EN.html">
-                            Consulting in Digital Transformation.
-                        </a>
-                    </li>
-                    <li>
-                        <a href="servicios3_EN.html">
-                            Growth Consulting
-                        </a>
-                    </li>
-                    <li>
-                        <a href="servicios4_EN.html">
-                            Software Testing Consulting
-                        </a>
-                    </li>
-                    <li>
-                        <a href="servicios5_EN.html">
-                            Business Search
-                        </a>
-                    </li>
-                    <li>
-                        <a href="servicios6_EN.html">
-                            Representation in Colombia
-                        </a>
-                    </li>
-                    <li>
-                        <a href="servicios7_EN.html">
-                            Training in Logic and Programming
-                        </a>
-                    </li>
-                    <li>
-                        <a href="servicios8_EN.html">
-                            Software Test Automation Training
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <section class="entradas" id="ay1">
-                <h1>
-                    Of all movements: Consolidate and grow.
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio ante, mattis nec orci vel,
-                    sollicitudin porttitor est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                    inceptos himenaeos. Nulla non ultricies quam, eu vestibulum lectus. Curabitur id posuere leo. Nam
-                    sed massa interdum, blandit risus id, fermentum purus. Morbi odio nulla, pretium non nulla eget,
-                    semper ultrices velit. Praesent rutrum quam in purus bibendum ornare. Praesent eleifend elementum
-                    tellus, sit amet auctor nibh pretium quis. Mauris pulvinar ligula in elit suscipit suscipit.
-                </p><br>
-                <p class="top1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio ante, mattis nec orci vel,
-                    sollicitudin porttitor est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                    inceptos himenaeos. Nulla non ultricies quam, eu vestibulum lectus. Curabitur id posuere leo. Nam
-                    sed massa interdum, blandit risus id, fermentum purus. Morbi odio nulla, pretium non nulla eget,
-                    semper ultrices velit. Praesent rutrum quam in purus bibendum ornare. Praesent eleifend elementum
-                    tellus, sit amet auctor nibh pretium quis. Mauris pulvinar ligula in elit suscipit suscipit.
-                </p><br>
-                <p>
-                    Fusce porta, mauris at tincidunt fermentum, nisl nisi facilisis eros, quis egestas dui est eu
-                    sapien. Integer sem nunc, vulputate varius pulvinar eget, malesuada sed ligula. Duis maximus, turpis
-                    nec egestas gravida, leo lectus condimentum lectus, eu gravida quam justo non tellus. Nullam
-                    venenatis semper nibh, sit amet pharetra massa egestas porttitor. Morbi nec lacus id nisi varius
-                    fringilla nec in ex. Curabitur sodales augue quis orci auctor efficitur. Mauris pretium vestibulum
-                    mi, id pulvinar nunc euismod at. Quisque ac cursus ante. Nunc mattis tincidunt nulla id tempor.
-                    Pellentesque consectetur lectus mauris, sit amet vestibulum erat porttitor in. Nulla nisi nulla,
-                    lobortis id interdum fermentum, venenatis vel mi. Maecenas non justo quis neque ultrices tristique.
-                    Nullam nec lacinia massa. Suspendisse iaculis suscipit sodales.
-                </p><br>
-                <p>
-                    <span class="i4">
-                        Etiam vel orci id augue congue pellentesque. Aliquam rhoncus neque odio, eget sollicitudin erat
-                        efficitur at. Cras elit sapien, posuere congue eleifend non, elementum nec massa. Nulla aliquam
-                        nisl quis accumsan eleifend. Sed et suscipit arcu. Praesent fermentum condimentum nisl sit amet
-                        congue. Praesent in ultricies quam. Mauris sed risus eros. Cras dictum odio ac eros dignissim
-                        auctor. Duis pellentesque nibh vel justo consectetur posuere. Aenean dignissim ante mi, eu
-                        ultrices ipsum volutpat et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                        posuere cubilia curae;
-                    </span>
-                </p><br>
-                <p>
-                    Donec a iaculis libero, id luctus diam. Sed non orci sodales, ultricies justo quis, vehicula justo.
-                    Morbi nec semper diam. Maecenas cursus quis arcu ut eleifend. Sed quis orci metus. Ut in ex vel
-                    metus pulvinar posuere porta eget tellus. Mauris blandit turpis ac enim dictum rutrum. Sed
-                    vestibulum hendrerit elementum. Maecenas ornare est sapien, vulputate feugiat velit venenatis ac.
-                    Donec eu urna ullamcorper, laoreet justo sit amet, posuere neque. Curabitur suscipit nulla vitae
-                    porttitor posuere. Vestibulum at ipsum auctor, varius dui at, iaculis tellus. Quisque faucibus nisi
-                    libero, vel tincidunt nunc mattis eu. Nulla finibus purus eget dolor semper, sed imperdiet mauris
-                    venenatis. Nunc varius condimentum metus, rhoncus semper odio sollicitudin ut.
-                </p><br>
+  const slides = [
+    // Slide 1: Title
+    {
+      type: 'title',
+      title: 'THE ANATOMY OF DESIRE',
+      subtitle: '4AP Competitive Intelligence & Market Strategy 2025',
+      content: 'Dominating the Power Triad: New York, California, and Florida.',
+      footer: 'D.D. | Senior Strategy Memo'
+    },
 
-                <p class="separador" style="margin-left: 12em; text-align:left;">
-                    <img alt="separador" src="../../img/separador.gif" />
-                </p>
-                <p style="margin-left: 4em; line-height: 1.6; text-indent:0;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    <br>
-                    Phasellus odio ante, mattis nec orci vel, sollicitudin porttitor est
-                    <br>
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra
-                    </br>
-                    </br>
-                </p>
-            </section>
-            <section id="acerca_section">
-                <h1>
-                    About TXZ
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio ante, mattis nec orci vel,
-                    sollicitudin porttitor est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                    inceptos himenaeos. Nulla non ultricies quam, eu vestibulum lectus. Curabitur id posuere leo. Nam
-                    sed massa interdum, blandit risus id, fermentum purus. Morbi odio nulla, pretium non nulla eget,
-                    semper ultrices velit. Praesent rutrum quam in purus bibendum ornare. Praesent eleifend elementum
-                    tellus, sit amet auctor nibh pretium quis. Mauris pulvinar ligula in elit suscipit suscipit.
-                </p>
-                <p>
-                    Sed tincidunt viverra justo, in consectetur ipsum fermentum eu. Aliquam sed risus est. Pellentesque
-                    consectetur sem ac velit mattis commodo. Vivamus ex odio, interdum sit amet augue sit amet,
-                    dignissim maximus orci. Aliquam id massa efficitur, feugiat arcu ac, placerat ipsum. Pellentesque
-                    nisi ipsum, accumsan non rutrum a, egestas ullamcorper massa. In aliquet ante vel purus dignissim,
-                    eget tristique nulla posuere. Vivamus nec lacus vitae magna vulputate maximus nec a tortor.
-                    Pellentesque in erat sollicitudin, tempus urna molestie, dapibus diam. Aliquam eget erat et dolor
-                    mattis lacinia. Donec dolor augue, consequat pretium cursus vitae, luctus ac lectus. Cras luctus
-                    dignissim sodales. Suspendisse ultrices nisl in eros volutpat eleifend nec a tellus. Quisque
-                    facilisis vulputate aliquet. Nam vestibulum quam sit amet felis pretium gravida ac sed leo.
-                </p>
-                <p>
-                    Fusce porta, mauris at tincidunt fermentum, nisl nisi facilisis eros, quis egestas dui est eu
-                    sapien. Integer sem nunc, vulputate varius pulvinar eget, malesuada sed ligula. Duis maximus, turpis
-                    nec egestas gravida, leo lectus condimentum lectus, eu gravida quam justo non tellus. Nullam
-                    venenatis semper nibh, sit amet pharetra massa egestas porttitor. Morbi nec lacus id nisi varius
-                    fringilla nec in ex. Curabitur sodales augue quis orci auctor efficitur. Mauris pretium vestibulum
-                    mi, id pulvinar nunc euismod at. Quisque ac cursus ante. Nunc mattis tincidunt nulla id tempor.
-                    Pellentesque consectetur lectus mauris, sit amet vestibulum erat porttitor in. Nulla nisi nulla,
-                    lobortis id interdum fermentum, venenatis vel mi. Maecenas non justo quis neque ultrices tristique.
-                    Nullam nec lacinia massa. Suspendisse iaculis suscipit sodales.
-                </p>
-            </section>
-        </div>
-        <footer>
-            <div>
-                <p>
-                    TXZ S.A.S.
-                    <br>
-                    N. I. T. 901.097.249-5
-                    <br>
-                    Phone +57 3167415198 - <a href="" target="_blank" style="text-decoration: none;">Email</a> - <a
-                        href="" target="_blank" style="text-decoration: none;">WhatsApp</a>
-                </p>
+    // Slide 2: Executive Summary
+    {
+      type: 'content',
+      title: 'EXECUTIVE SUMMARY',
+      icon: <Target className="text-[#c50000]" size={32} />,
+      content: (
+        <div className="grid grid-cols-2 gap-8 h-full items-center">
+          <div className="space-y-6">
+            <p className="text-2xl leading-relaxed italic border-l-4 border-[#c50000] pl-6">
+              "We aren't in the decor business. We are in the business of identity management. In NY, they buy for status. In FL, for heritage. In CA, for atmosphere."
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-slate-50 p-4 border-t-2 border-[#c50000]">
+                <h4 className="font-bold text-[#c50000]">KEY HUB</h4>
+                <p className="text-sm">Florida (Weston/Miami) acts as the heart of our Diaspora Heritage market.</p>
+              </div>
+              <div className="bg-slate-50 p-4 border-t-2 border-[#c50000]">
+                <h4 className="font-bold text-[#c50000]">MARGIN DRIVER</h4>
+                <p className="text-sm">Made-to-Order (JPG to Gold) eliminates inventory risk while maximizing prestige.</p>
+              </div>
             </div>
-        </footer>
-    </div>
-    <!-- <script src="http://code.jquery.com/jquery-1.12.3.min.js"></script> -->
-    <!-- https://code.jquery.com/jquery-migrate-1.4.1.min.js -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js">
-    </script>
-    <!-- <script src="code/jquery-migrate-3.0.0.js"></script> -->
-    <!-- <script src="code/lib/add.min.js"></script> -->
-    <script src="../../js/txz.js">
-    </script>
-</body>
+          </div>
+          <div className="bg-[#1a1a1a] p-8 text-white rounded-lg">
+            <h3 className="text-[#c50000] font-bold mb-4">THE STRATEGIC GAP</h3>
+            <p className="text-sm text-slate-300">
+              Competitors like 1stDibs are too antique; Saatchi is too mass-market. 4AP occupies the "Curated Modern Heritage" niche—the only space where religion meets high design without the dust.
+            </p>
+          </div>
+        </div>
+      )
+    },
 
-</html>
+    // Slide 3: Portfolio Matrix
+    {
+      type: 'chart',
+      title: 'PORTFOLIO MATRIX: BREADTH VS. DEPTH',
+      subtitle: 'The Battle for SKU Dominance and Average Ticket (AOV)',
+      chartType: 'bubble',
+      content: 'This matrix displays the trade-off between catalog size (Width) and item specialization (Depth). Size of bubble represents AOV.'
+    },
+
+    // Slide 4: Competition Grid
+    {
+      type: 'content',
+      title: 'MARKET BATTLEGROUND 2025',
+      icon: <Users className="text-[#c50000]" size={32} />,
+      content: (
+        <div className="overflow-x-auto h-full flex flex-col justify-center">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-[#1a1a1a] text-white">
+                <th className="p-4 uppercase text-xs tracking-widest">Competitor</th>
+                <th className="p-4 uppercase text-xs tracking-widest">Segment</th>
+                <th className="p-4 uppercase text-xs tracking-widest">US Stronghold</th>
+                <th className="p-4 uppercase text-xs tracking-widest">AOV (Est.)</th>
+                <th className="p-4 uppercase text-xs tracking-widest">2025 Focus</th>
+              </tr>
+            </thead>
+            <tbody className="text-sm">
+              <tr className="border-b border-slate-200">
+                <td className="p-4 font-bold">1stDibs</td>
+                <td className="p-4 italic">Ultra-High Net Worth</td>
+                <td className="p-4">NY (Manhattan)</td>
+                <td className="p-4 text-[#c50000] font-bold">$8,500</td>
+                <td className="p-4">Authenticity Guarantees</td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="p-4 font-bold">Saatchi Art</td>
+                <td className="p-4 italic">Emerging Collectors</td>
+                <td className="p-4">CA (Tech Hubs)</td>
+                <td className="p-4 text-[#c50000] font-bold">$1,200</td>
+                <td className="p-4">Visual Search AI</td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="p-4 font-bold">Joopiter</td>
+                <td className="p-4 italic">Cultural Hype</td>
+                <td className="p-4">CA (Los Angeles)</td>
+                <td className="p-4 text-[#c50000] font-bold">$12,000</td>
+                <td className="p-4">Exclusive Drops</td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="p-4 font-bold">Uncommon Goods</td>
+                <td className="p-4 italic">Mass Premium Gifting</td>
+                <td className="p-4">FL / Suburban</td>
+                <td className="p-4 text-[#c50000] font-bold">$145</td>
+                <td className="p-4">Artisan Storytelling</td>
+              </tr>
+              <tr className="bg-[#c50000]/5">
+                <td className="p-4 font-bold text-[#c50000]">4AP</td>
+                <td className="p-4 italic font-bold">Modern Identity</td>
+                <td className="p-4 font-bold">The Triad (NY/CA/FL)</td>
+                <td className="p-4 text-[#c50000] font-bold">$2,200</td>
+                <td className="p-4 font-bold">Prestige On-Demand</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      )
+    },
+
+    // Slide 5: The Paradox of Choice
+    {
+      type: 'content',
+      title: 'THE PARADOX OF CHOICE',
+      icon: <Quote className="text-[#c50000]" size={32} />,
+      content: (
+        <div className="grid grid-cols-2 gap-12 h-full items-center">
+          <div className="relative">
+            <span className="text-[200px] absolute -top-32 -left-10 text-[#c50000]/10 font-serif">"</span>
+            <p className="text-4xl font-bold leading-tight relative z-10 text-[#1a1a1a]">
+              More choices make us <span className="text-[#c50000]">paralyzed</span>, not free.
+            </p>
+            <p className="mt-8 text-xl text-[#4a4a4a]">
+              In the luxury market, 1stDibs and Saatchi sell a warehouse. They force the customer to be the curator. 
+              <br/><br/>
+              <strong>4AP is the cure.</strong> We don't offer 1,000 pieces; we offer the 10 pieces that define a home.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            <div className="border-l-4 border-[#1a1a1a] p-6 bg-slate-50">
+              <h4 className="font-bold text-[#c50000] mb-2">WAREHOUSE MODEL</h4>
+              <p className="text-sm">1stDibs: 1.2M SKUs. Customer feels fatigue. High bounce rates on mobile.</p>
+            </div>
+            <div className="border-l-4 border-[#c50000] p-6 bg-slate-50">
+              <h4 className="font-bold text-[#c50000] mb-2">GALLERY MODEL</h4>
+              <p className="text-sm">4AP: Curated Collections. Customer feels understood. High intent conversion.</p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 6: Regional Share heatmap logic
+    {
+      type: 'chart',
+      title: 'REGIONAL DOMINANCE BY STATE',
+      subtitle: 'Estimated Market Penetration: NY, CA, and FL',
+      chartType: 'bar',
+      content: 'Comparison of competitive footprint across our three target hubs. Note the Florida GAP.'
+    },
+
+    // Slide 7: US Market Share Distribution
+    {
+      type: 'chart',
+      title: 'US MARKET SHARE DISTRIBUTION',
+      subtitle: 'Estimated Share of High-End Art Commerce (2025 Projection)',
+      chartType: 'pie',
+      content: 'Visualizing the "Pie" and the available 15% opportunity for specialized boutique players like 4AP.'
+    },
+
+    // Slide 8: Digital Traffic Acquisition
+    {
+      type: 'chart',
+      title: 'DIGITAL TRAFFIC ACQUISITION',
+      subtitle: 'Winning the Attention War: Channel Efficacy by Competitor',
+      chartType: 'horizontalBar',
+      content: 'Where the traffic comes from. Note the Social/Drop model of Joopiter vs. the SEO dominance of 1stDibs.'
+    },
+
+    // Slide 9: Detailed Strategy by Hub
+    {
+      type: 'content',
+      title: 'THE GEOGRAPHY OF DESIRE',
+      icon: <MapPin className="text-[#c50000]" size={32} />,
+      content: (
+        <div className="grid grid-cols-3 gap-6 h-full">
+          <div className="border border-slate-200 p-6 rounded-lg bg-white flex flex-col">
+            <h4 className="text-[#c50000] font-bold text-xl mb-4 border-b pb-2">NEW YORK</h4>
+            <p className="text-sm font-bold text-[#1a1a1a] mb-2">THE INTELLECTUAL FLEX</p>
+            <p className="text-xs text-[#4a4a4a] flex-grow">
+              Focus on Manhattan/Brooklyn apartments. Small footprint, high status. <br/><br/>
+              <strong>Sell:</strong> High-margin Art Prints. The "Original Feel" without the floor space.
+            </p>
+            <div className="mt-4 pt-4 border-t text-[10px] uppercase font-bold text-slate-400">Target: Curated Minimalism</div>
+          </div>
+          <div className="border border-slate-200 p-6 rounded-lg bg-white flex flex-col">
+            <h4 className="text-[#c50000] font-bold text-xl mb-4 border-b pb-2">FLORIDA</h4>
+            <p className="text-sm font-bold text-[#1a1a1a] mb-2">THE TRIBE GATHERING</p>
+            <p className="text-xs text-[#4a4a4a] flex-grow">
+              Focus on Weston/Aventura. Large homes, hosting culture, strong heritage connection.<br/><br/>
+              <strong>Sell:</strong> Porcelain Charger Plates & Menorahs. Be the table's centerpiece.
+            </p>
+            <div className="mt-4 pt-4 border-t text-[10px] uppercase font-bold text-slate-400">Target: Social Heritage</div>
+          </div>
+          <div className="border border-slate-200 p-6 rounded-lg bg-white flex flex-col">
+            <h4 className="text-[#c50000] font-bold text-xl mb-4 border-b pb-2">CALIFORNIA</h4>
+            <p className="text-sm font-bold text-[#1a1a1a] mb-2">THE SANCTUARY VIBE</p>
+            <p className="text-xs text-[#4a4a4a] flex-grow">
+              Focus on LA/Newport. Tech wealth meets organic modernism. <br/><br/>
+              <strong>Sell:</strong> Geometry & Flow. Use existing stock for "Ready-to-Ship" instant gratification.
+            </p>
+            <div className="mt-4 pt-4 border-t text-[10px] uppercase font-bold text-slate-400">Target: Mindful Modernism</div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 10: Analyst Verdict
+    {
+      type: 'content',
+      title: "THE ANALYST'S VERDICT",
+      icon: <TrendingUp className="text-[#c50000]" size={32} />,
+      content: (
+        <div className="flex flex-col justify-center h-full space-y-8 bg-slate-50 p-12 border-l-8 border-[#c50000]">
+          <h3 className="text-4xl font-bold italic">"Identity is the ultimate currency."</h3>
+          <p className="text-xl leading-relaxed text-[#1a1a1a]">
+            Stop trying to compete with the <strong>volume</strong> of Saatchi or the <strong>history</strong> of 1stDibs. 
+            4AP's winning move is <strong>Prestige On-Demand</strong>.
+          </p>
+          <div className="space-y-4 text-lg">
+            <p className="flex items-center gap-4"><Zap size={20} className="text-[#c50000]" /> <strong>Phase 1:</strong> Consolidate Florida. Settle the diaspora's home. </p>
+            <p className="flex items-center gap-4"><Zap size={20} className="text-[#c50000]" /> <strong>Phase 2:</strong> Use "Drops" like Joopiter to drive scarcity for Art Prints in NY. </p>
+            <p className="flex items-center gap-4"><Zap size={20} className="text-[#c50000]" /> <strong>Phase 3:</strong> Pivot to "Lifestyle" collections (Porcelain) to drive repeat purchase.</p>
+          </div>
+          <p className="pt-12 font-bold text-[#c50000]">D.D. | Strategic Counsel</p>
+        </div>
+      )
+    }
+  ];
+
+  const handleNext = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const handlePrev = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const slide = slides[currentSlide];
+
+  // Chart Data
+  const bubbleData = [
+    { name: '1stDibs', x: 100, y: 90, z: 8000, color: '#1a1a1a' },
+    { name: 'Saatchi', x: 90, y: 40, z: 1500, color: '#4a4a4a' },
+    { name: 'Uncommon', x: 60, y: 20, z: 145, color: '#8a8a8a' },
+    { name: 'Artware', x: 30, y: 70, z: 800, color: '#d1d1d1' },
+    { name: '4AP', x: 20, y: 65, z: 2200, color: '#c50000' },
+  ];
+
+  const barData = [
+    { state: 'NY', '1stDibs': 45, 'Saatchi': 20, 'Uncommon': 5, '4AP': 15, 'Others': 15 },
+    { state: 'CA', '1stDibs': 30, 'Saatchi': 45, 'Uncommon': 10, '4AP': 10, 'Others': 5 },
+    { state: 'FL', '1stDibs': 10, 'Saatchi': 10, 'Uncommon': 40, '4AP': 30, 'Others': 10 },
+  ];
+
+  const pieData = [
+    { name: '1stDibs', value: 40 },
+    { name: 'Saatchi', value: 25 },
+    { name: 'Uncommon Goods', value: 20 },
+    { name: '4AP Opportunity', value: 15 },
+  ];
+
+  const acquisitionData = [
+    { name: '1stDibs', SEO: 65, Social: 10, Email: 15, Paid: 10 },
+    { name: 'Joopiter', SEO: 10, Social: 80, Email: 5, Paid: 5 },
+    { name: 'Uncommon', SEO: 20, Social: 15, Email: 50, Paid: 15 },
+    { name: '4AP (Target)', SEO: 30, Social: 40, Email: 20, Paid: 10 },
+  ];
+
+  const renderChart = () => {
+    if (slide.chartType === 'bubble') {
+      return (
+        <div className="h-full w-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+              <XAxis dataKey="x" type="number" name="Catalog Width (SKUs)" unit="" stroke="#1a1a1a" label={{ value: 'Portfolio Breadth (SKUs)', position: 'insideBottom', offset: -10 }} />
+              <YAxis dataKey="y" type="number" name="Portfolio Depth" stroke="#1a1a1a" label={{ value: 'Niche Specialization', angle: -90, position: 'insideLeft' }} />
+              <ZAxis dataKey="z" type="number" range={[100, 2000]} name="AOV" />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} content={({ active, payload }) => {
+                if (active && payload && payload.length) {
+                  const data = payload[0].payload;
+                  return (
+                    <div className="bg-white p-4 shadow-xl border border-slate-200">
+                      <p className="font-bold text-[#c50000]">{data.name}</p>
+                      <p className="text-xs">AOV: ${data.z}</p>
+                      <p className="text-xs">SKUs: {data.x}k+</p>
+                    </div>
+                  );
+                }
+                return null;
+              }} />
+              <Legend />
+              {bubbleData.map((entry, index) => (
+                <Scatter key={index} name={entry.name} data={[entry]} fill={entry.color} />
+              ))}
+            </ScatterChart>
+          </ResponsiveContainer>
+        </div>
+      );
+    }
+    if (slide.chartType === 'bar') {
+      return (
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={barData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <XAxis dataKey="state" stroke="#1a1a1a" />
+            <YAxis unit="%" stroke="#1a1a1a" />
+            <Tooltip cursor={{fill: 'transparent'}} />
+            <Legend verticalAlign="top" height={36}/>
+            <Bar dataKey="1stDibs" stackId="a" fill="#1a1a1a" />
+            <Bar dataKey="Saatchi" stackId="a" fill="#4a4a4a" />
+            <Bar dataKey="Uncommon" stackId="a" fill="#8a8a8a" />
+            <Bar dataKey="4AP" stackId="a" fill="#c50000" />
+          </BarChart>
+        </ResponsiveContainer>
+      );
+    }
+    if (slide.chartType === 'pie') {
+      return (
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={pieData}
+              cx="50%"
+              cy="50%"
+              innerRadius={80}
+              outerRadius={120}
+              paddingAngle={5}
+              dataKey="value"
+            >
+              {pieData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS.chart[index % COLORS.chart.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+            <Legend />
+          </PieChart>
+        </ResponsiveContainer>
+      );
+    }
+    if (slide.chartType === 'horizontalBar') {
+      return (
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart layout="vertical" data={acquisitionData} margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+            <XAxis type="number" unit="%" />
+            <YAxis dataKey="name" type="category" stroke="#1a1a1a" />
+            <Tooltip cursor={{fill: 'transparent'}} />
+            <Legend />
+            <Bar dataKey="SEO" stackId="a" fill="#1a1a1a" />
+            <Bar dataKey="Social" stackId="a" fill="#c50000" />
+            <Bar dataKey="Email" stackId="a" fill="#4a4a4a" />
+            <Bar dataKey="Paid" stackId="a" fill="#8a8a8a" />
+          </BarChart>
+        </ResponsiveContainer>
+      );
+    }
+    return null;
+  };
+
+  return (
+    <div className="flex flex-col w-full h-screen bg-[#f1f5f9] overflow-hidden">
+      {/* Progress Bar */}
+      <div className="w-full h-1 bg-slate-200">
+        <div 
+          className="h-full bg-[#c50000] transition-all duration-300 ease-in-out" 
+          style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+        />
+      </div>
+
+      <div className="flex-grow flex items-center justify-center p-4 md:p-8">
+        <div className="relative w-full max-w-6xl aspect-[16/9] bg-white shadow-2xl rounded-sm border border-slate-200 flex flex-col p-12 overflow-hidden">
+          
+          {/* Logo Branding */}
+          <div className="absolute top-8 right-8 flex items-center gap-2">
+            <span className="text-[#c50000] font-black text-2xl tracking-tighter">4AP</span>
+            <div className="h-6 w-px bg-slate-200"></div>
+            <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Strategy Deck</span>
+          </div>
+
+          {slide.type === 'title' ? (
+            <div className="h-full flex flex-col justify-center border-l-[16px] border-[#c50000] pl-16">
+              <h1 className="text-8xl font-black mb-4 tracking-tighter text-[#1a1a1a]">
+                {slide.title.split(' ').map((word, i) => (
+                  <span key={i} className={word === 'DESIRE' ? 'text-[#c50000]' : ''}>{word} </span>
+                ))}
+              </h1>
+              <p className="text-3xl font-bold text-[#4a4a4a] mb-8">{slide.subtitle}</p>
+              <p className="text-xl text-slate-400 max-w-xl leading-relaxed">{slide.content}</p>
+              <div className="mt-16 flex gap-8 items-center text-slate-300 font-bold uppercase tracking-[0.2em] text-xs">
+                <span>2025 Market Intelligence</span>
+                <div className="w-10 h-px bg-slate-300"></div>
+                <span>New York • Florida • California</span>
+              </div>
+            </div>
+          ) : (
+            <div className="h-full flex flex-col">
+              <div className="flex items-center gap-4 mb-8">
+                {slide.icon}
+                <div>
+                  <h2 className="text-3xl font-black text-[#1a1a1a] tracking-tight">{slide.title}</h2>
+                  <p className="text-slate-400 font-bold text-sm uppercase tracking-widest">{slide.subtitle}</p>
+                </div>
+              </div>
+
+              <div className="flex-grow">
+                {slide.type === 'chart' ? (
+                  <div className="grid grid-cols-4 gap-12 h-full">
+                    <div className="col-span-3 bg-white p-4 h-full border border-slate-100 shadow-inner">
+                      {renderChart()}
+                    </div>
+                    <div className="col-span-1 flex flex-col justify-center space-y-6">
+                      <div className="bg-slate-50 p-6 border-l-4 border-[#c50000]">
+                        <h4 className="font-bold text-[#1a1a1a] mb-2 uppercase text-xs tracking-widest">Deduction</h4>
+                        <p className="text-sm text-[#4a4a4a] leading-relaxed italic">{slide.content}</p>
+                      </div>
+                      <div className="p-6">
+                        <h4 className="font-bold text-[#c50000] mb-2 uppercase text-xs tracking-widest">Target Trend</h4>
+                        <p className="text-xs text-slate-400">High niche specialization combined with high AOV creates a "moat" around the 4AP business model.</p>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  slide.content
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Slide Navigation Footer */}
+          <div className="absolute bottom-8 left-12 right-12 flex justify-between items-center">
+            <div className="flex gap-2">
+              <button 
+                onClick={handlePrev} 
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors border border-slate-100"
+              >
+                <ChevronLeft size={20} className="text-slate-400" />
+              </button>
+              <button 
+                onClick={handleNext} 
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors border border-slate-100"
+              >
+                <ChevronRight size={20} className="text-slate-400" />
+              </button>
+            </div>
+            
+            <span className="text-[10px] font-bold tracking-[0.3em] text-slate-300 uppercase">
+              Slide {currentSlide + 1} / {slides.length} — {slide.footer || "4AP Strategic Intelligence Report"}
+            </span>
+
+            <div className="flex gap-1">
+              {slides.map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`w-2 h-2 rounded-full ${currentSlide === i ? 'bg-[#c50000]' : 'bg-slate-200'}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
