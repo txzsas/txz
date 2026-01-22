@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Shield: Confidential and Private Access -->
+    <!-- Privacy Shield: Ensures the report remains private and unindexed -->
     <meta name="robots" content="noindex, nofollow">
-    <title>4AP Intelligence Hub | 2026 Market Strategic Advisory</title>
+    <title>4AP Intelligence Hub | Vortexian Strategic Advisory</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -52,6 +52,11 @@
             border: 1px solid #e5e7eb;
             padding: 2rem;
             border-radius: 0;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .btn-spark {
@@ -155,7 +160,7 @@
         <div class="nav-tab" onclick="switchTab('narrative', this)">The Verdict</div>
     </nav>
 
-    <!-- Main Content Area -->
+    <!-- Main View -->
     <main id="mainContent" class="flex-grow overflow-y-auto p-12 bg-[#fafafa]">
         <!-- Content will be injected here via JS -->
     </main>
@@ -166,7 +171,7 @@
             <span class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">Confidential Strategic Intelligence &copy; 2026 4ArtPartners | Vortexian</span>
             <span class="text-[8px] text-gray-300 font-medium uppercase mt-1 italic tracking-widest">PRIVATE REPORT: This document is not indexed by search engines. Access is restricted to designated URL holders only.</span>
         </div>
-        <div class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">Data: Public Retail Benchmarks 2025</div>
+        <div class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">Source: Public Retail Benchmarks 2025</div>
     </footer>
 
     <!-- Advisory Sidebar -->
@@ -180,8 +185,8 @@
         </div>
         <div id="aiResponse" class="p-10 flex-grow overflow-y-auto text-sm leading-relaxed text-gray-700 bg-white">
             <div class="flex flex-col items-center justify-center h-full text-center space-y-4">
-                <i class="fa-solid fa-scale-balanced text-4xl text-gray-100"></i>
-                <p class="italic text-gray-400 font-medium">Please select a "Strategic Spark" from the hub to review the council's analysis on specific market variables.</p>
+                <i class="fa-solid fa-compass text-4xl text-gray-100"></i>
+                <p class="italic text-gray-400 font-medium">Please select a "Strategic Spark" from the hub to review targeted analysis on regional or competitive variables.</p>
             </div>
         </div>
         <div class="p-10 border-t bg-gray-50 flex flex-col gap-4">
@@ -201,26 +206,26 @@
         
         // --- PRE-LOADED STRATEGIC COUNSEL ---
         const advisoryCounsel = {
-            'NY': "NY High-Net-Worth Profile: Purchases in Zip Codes like 10013 (TriBeCa) and 10023 (UES) confirm a move toward 'Silent Luxury'. Logic: Our On-Demand model allows NY collectors to feel the exclusivity of a gallery piece without the antique-storage dust. CAC in NY is high ($185) but offset by high-LTV potential. B2B interior designer networks are the priority here.",
-            'FL': "FL Regional Moat: Weston, Miami Shores, and Aventura show a 30% penetration gap. This market is driven by 'Heritage Hospitality'. CAC in FL is exceptionally efficient ($65) due to social referral loops. Offline pop-ups in Aventura Mall or private events in Weston are the winning offline tactics.",
-            'CA': "CA Aesthetic Market: Newport Beach and LA tech wealth value 'Geometric Harmony'. Our On-Demand capability means zero inventory risk in high-rent states. CAC in CA ($140) reflects competitive digital landscapes. Leverage localized B2B partnerships with boutique architects in Pacific Palisades.",
-            '1stDibs': "1stDibs: Wins on 'Trust'. 4AP vulnerability: Heritage verification. Action: Implement 'Artist Provenance' digital certificates for every sale. Our On-Demand model competes by being 'Contemporary Heritage' vs their 'Ancient History'.",
-            'Joopiter': "Joopiter: Proven social efficiency. 4AP should move to a 'Drop' model quarterly for high-ticket exclusives, using our On-Demand agility to fulfillment without sell-out barriers.",
-            'Saatchi': "Saatchi: Volume discovery machine. 4AP must bypass their volume by owning specific 'Modern Roots' niches. We don't need 500k SKUs to win the 'Geometric Judaica' search intent.",
-            'Uncommon': "Uncommon Goods: Mass gifting. 4AP must move the buyer from 'Purchase' to 'Investment'. The On-Demand model allows for bespoke personalization that mass retailers cannot match.",
-            'Artware': "Artware: Closest peer. Advantage: 4AP owns the singular Frank Alcock brand identity. We aren't a list of artists; we are a specific aesthetic identity. Higher AOV target allows for better white-glove service.",
-            'AOV': "The $70 AOV is our velocity engine. It allows us to scale volume within 'Modern Heritage' (Porcelain) to build a database for the $5k+ investment art prints.",
-            'Global': "Vortexian's 2025 Verdict: The 'Power Triad' is the path to revenue. Saturating identified hubs like Weston, Brooklyn Heights, and Pacific Palisades is the path to dominance. Use look-alike modeling to expand into demographically identical zip codes. Contact Carlos Gomez at cg@vortexian.com."
+            'NY': "NY High-Net-Worth Profile: Purchases in Zip Codes like 10013 (TriBeCa) and 10023 (UES) confirm a move toward 'Silent Luxury'. CAC in NY is high ($185) but the LTV justifies the spend. Use look-alike modeling to target bubbles in Greenwich, CT and Scarsdale.",
+            'FL': "FL Regional Moat: Weston, Miami Shores, and Aventura show a 30% penetration gap. This market is driven by 'Heritage Hospitality'. CAC in FL is exceptionally efficient ($65). Replicate this model in Parkland and Coral Gables clusters.",
+            'CA': "CA Aesthetic Market: Newport Beach and LA tech wealth value 'Geometric Harmony'. Our On-Demand capability means zero inventory risk in high-rent states. CAC in CA ($140) is stable. Target nodes like Santa Barbara for cloning.",
+            '1stDibs': "1stDibs: Wins on 'Trust'. Counter-strategy: Implement 'Digital Artist Provenance' to erode their antique monopoly. Market Share: 40%.",
+            'Joopiter': "Joopiter: Proven social scarcity. Adopt their 'Drop' model quarterly for exclusives. Market Share: ~5% (Niche Apex).",
+            'Saatchi': "Saatchi: Volume engine. Bypass their scale by owning specific cultural niches (Contemporary Geometric Judaica). Market Share: 25%.",
+            'Uncommon': "Uncommon: Mass gifting. 4AP must pivot to 'Heirloom Investment'. Market Share: 20%.",
+            'Artware': "Artware: Closest peer. We win on singular brand depth (Frank Alcock). Market Share: ~5%.",
+            'AOV': "The $70 AOV allows for high-velocity entry into homes. This creates a database for upselling $5k+ investment editions via B2B designer channels.",
+            'Global': "Vortexian's 2025 Verdict: Saturate identified nodes in NY, CA, and FL first. Use B2B and Pop-up Galleries to dominate the 'last mile' in winning zip codes. Contact cg@vortexian.com for deployment."
         };
 
         // --- DATASET CALIBRATION ---
         const competitorData = [
-            { name: '1stDibs', skus: 1200000, aov: 8500, x: 100, y: 85, r: 25, traffic: '52.0M', conv: '260,000', cr: '0.50%', sales: '$2.21B' },
-            { name: 'Saatchi Art', skus: 500000, aov: 1200, x: 85, y: 35, r: 20, traffic: '24.0M', conv: '288,000', cr: '1.20%', sales: '$345.6M' },
-            { name: 'Uncommon Goods', skus: 8000, aov: 145, x: 60, y: 15, r: 15, traffic: '45.0M', conv: '1,575,000', cr: '3.50%', sales: '$228.4M' },
-            { name: 'Joopiter', skus: 500, aov: 12000, x: 15, y: 95, r: 22, traffic: '3.0M', conv: '9,000', cr: '0.30%', sales: '$108.0M' },
-            { name: 'Artware', skus: 350, aov: 850, x: 20, y: 30, r: 18, traffic: '1.2M', conv: '9,600', cr: '0.80%', sales: '$8.16M' },
-            { name: '4AP (Target)', skus: 99, aov: 70, x: 10, y: 10, r: 35, traffic: '250k', conv: '3,750', cr: '1.50%', sales: '$262.5k' }
+            { name: '1stDibs', skus: 1200000, aov: 8500, x: 100, y: 85, r: 40, traffic: '52.0M', conv: '260,000', cr: '0.50%', sales: '$2.21B' },
+            { name: 'Saatchi Art', skus: 500000, aov: 1200, x: 85, y: 35, r: 25, traffic: '24.0M', conv: '288,000', cr: '1.20%', sales: '$345.6M' },
+            { name: 'Uncommon Goods', skus: 8000, aov: 145, x: 60, y: 15, r: 20, traffic: '45.0M', conv: '1,575,000', cr: '3.50%', sales: '$228.4M' },
+            { name: 'Joopiter', skus: 500, aov: 12000, x: 15, y: 95, r: 5, traffic: '3.0M', conv: '9,000', cr: '0.30%', sales: '$108.0M' },
+            { name: 'Artware', skus: 350, aov: 850, x: 20, y: 30, r: 5, traffic: '1.2M', conv: '9,600', cr: '0.80%', sales: '$8.16M' },
+            { name: '4AP (Target)', skus: 99, aov: 70, x: 10, y: 10, r: 15, traffic: '250k', conv: '3,750', cr: '1.50%', sales: '$262.5k' }
         ];
 
         const cacData = {
@@ -258,7 +263,7 @@
                                 ${['NY', 'FL', 'CA'].map(state => `
                                     <div class="card p-6 border border-gray-100 flex flex-col justify-between hover:border-red-500 transition">
                                         <div>
-                                            <h4 class="font-black text-[#c50000] text-[10px] mb-1 uppercase">${state} Performance</h4>
+                                            <h4 class="font-black text-[#c50000] text-[10px] mb-1 uppercase">${state} Hub</h4>
                                             <p class="text-[11px] font-bold text-gray-400 mb-4 uppercase tracking-tighter">${state === 'NY' ? 'Intellectual Flex' : state === 'FL' ? 'Heritage Anchor' : 'Aesthetic Flow'}</p>
                                             <div class="mt-2 py-3 bg-gray-50 border-y border-gray-100 flex flex-col items-center">
                                                 <span class="text-[9px] font-black uppercase text-gray-400">Average CAC</span>
@@ -273,12 +278,12 @@
                         </div>
                         <div class="space-y-10">
                             <div class="card">
-                                <h3 class="text-xl font-black uppercase mb-6 tracking-tighter">Boutique Opportunity</h3>
+                                <h3 class="text-xl font-black uppercase mb-6 tracking-tighter">Boutique Gap</h3>
                                 <div class="h-[300px]"><canvas id="shareChart"></canvas></div>
                                 <div class="mt-10 p-6 bg-gray-50 border-t border-gray-100">
-                                    <p class="text-[10px] font-black uppercase text-[#c50000] mb-3">Strategic Counsel Summary</p>
-                                    <p class="text-[13px] font-medium leading-relaxed italic text-gray-600">
-                                        "Winning in 2025 requires tactical CAC optimization. Florida's organic networks allow us to subsidize high-prestige acquisition in New York."
+                                    <p class="text-[10px] font-black uppercase text-[#c50000] mb-3">Vortexian Strategic Note</p>
+                                    <p class="text-[13px] font-medium leading-relaxed italic text-gray-500">
+                                        "Focus on the 15% niche. Exclusivity drives margin higher than volume. Subsidize NY acquisition through FL organic efficiency."
                                     </p>
                                 </div>
                             </div>
@@ -291,17 +296,16 @@
                     <div class="space-y-10 animate-in fade-in duration-500">
                         <div class="flex justify-between items-end">
                             <h2 class="text-3xl font-black uppercase tracking-tighter">Market Depth Bubble Index</h2>
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Positioning vs. Competitor Volume</p>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Positioning vs. Competitor Volume Index</p>
                         </div>
                         
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                             <div class="card flex flex-col">
                                 <h4 class="font-black text-xs uppercase mb-6 border-b pb-4">Positioning Matrix</h4>
                                 <div class="h-[400px] flex-grow"><canvas id="bubbleChart"></canvas></div>
-                                <div class="mt-8 pt-4 border-t border-gray-100 text-center space-y-1">
-                                    <p class="text-[10px] font-black uppercase tracking-widest text-black">X: Scale (Catalog SKUs)</p>
-                                    <p class="text-[10px] font-black uppercase tracking-widest text-black">Y: Pricing (Avg Ticket $)</p>
-                                    <p class="text-[10px] font-black uppercase tracking-widest text-[#c50000]">Bubble Radius = Brand Authority Index</p>
+                                <div class="mt-8 pt-4 border-t border-gray-100 text-center space-y-2">
+                                    <p class="text-[11px] font-black uppercase tracking-widest text-black">X: Scale (Catalog SKUs) | Y: Pricing (Avg Ticket $)</p>
+                                    <p class="text-[11px] font-black uppercase tracking-widest text-[#c50000]">Bubble Radius = Market Share %</p>
                                 </div>
                             </div>
 
@@ -310,7 +314,7 @@
                                     <thead class="bg-gray-50">
                                         <tr>
                                             <th>Competitor</th>
-                                            <th>Published SKUs</th>
+                                            <th>Quantity of SKUs</th>
                                             <th>AOV (US$)</th>
                                             <th>Counsel</th>
                                         </tr>
@@ -335,24 +339,24 @@
                 container.innerHTML = `
                     <div class="max-w-7xl mx-auto space-y-10 animate-in slide-in-from-bottom duration-500">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                            <div class="lg:col-span-7 card">
+                            <div class="lg:col-span-6 card">
                                 <h3 class="text-2xl font-black uppercase mb-10 text-[#c50000] tracking-tighter">Growth Architecture: Channel Efficacy</h3>
                                 <div class="h-[450px]"><canvas id="digitalChart"></canvas></div>
                             </div>
-                            <div class="lg:col-span-5 card flex flex-col p-0 overflow-hidden">
+                            <div class="lg:col-span-6 card flex flex-col p-0 overflow-hidden">
                                 <div class="p-6 bg-black text-white">
                                     <h4 class="font-black text-xs uppercase tracking-widest">Traffic Acquisition & Performance 2025</h4>
-                                    <p class="text-[9px] text-gray-500 uppercase mt-1">Estimates based on public digital footprints</p>
+                                    <p class="text-[9px] text-gray-500 uppercase mt-1">Estimates based on public footprint modeling</p>
                                 </div>
                                 <div class="flex-grow flex flex-col overflow-x-auto">
                                     <table class="w-full luxe-table text-[10px]">
                                         <thead>
                                             <tr>
                                                 <th>Player</th>
-                                                <th>Sessions</th>
-                                                <th>Conv. #</th>
-                                                <th>CR %</th>
-                                                <th>Sales USD$</th>
+                                                <th>Global Sessions</th>
+                                                <th>Total Conv. #</th>
+                                                <th>Avg CR %</th>
+                                                <th>Total Sales USD$</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -378,7 +382,7 @@
                     <div class="max-w-4xl mx-auto py-12 space-y-16 animate-in fade-in duration-700">
                         <div class="text-center">
                             <h2 class="text-7xl font-black uppercase tracking-tighter mb-4">The <span class="text-[#c50000]">Verdict</span></h2>
-                            <p class="text-lg font-bold text-gray-400 uppercase tracking-[0.3em]">Tactical Growth Architecture by Vortexian</p>
+                            <p class="text-lg font-bold text-gray-400 uppercase tracking-[0.3em]">Tactical Strategy Briefing by Vortexian</p>
                         </div>
                         <div class="space-y-12">
                             <div class="card border-l-8 border-[#c50000] bg-gray-50/50 p-12">
@@ -386,11 +390,11 @@
                                 <hr class="w-20 border-black border-2 mb-8">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm text-gray-600 leading-relaxed">
                                     <div class="space-y-6">
-                                        <h4 class="font-black text-black uppercase tracking-widest text-xs">I. Bubble Saturation (E-comm & B2B)</h4>
+                                        <h4 class="font-black text-black uppercase tracking-widest text-xs">I. Bubble Saturation Strategy</h4>
                                         <p>Winning in 2025 requires saturating identified nodes: <strong>Weston (FL)</strong>, <strong>Brooklyn Heights (NY)</strong>, and <strong>Pacific Palisades (CA)</strong>. We win via Omnichannel dominance: hyper-local retargeting for e-commerce, and high-ticket B2B partnerships with local interior design firms who already own the 'last mile' of trust in these bubbles.</p>
                                     </div>
                                     <div class="space-y-6">
-                                        <h4 class="font-black text-black uppercase tracking-widest text-xs">II. Look-alike Cloning & Offline Pop-ups</h4>
+                                        <h4 class="font-black text-black uppercase tracking-widest text-xs">II. Look-alike Expansion Cloning</h4>
                                         <p>Scale is achieved by replicating success in demographically identical 'Look-alike' clusters (e.g., <strong>Santa Barbara, CA</strong> or <strong>Parkland, FL</strong>). Our <strong>On-Demand model</strong> allows us to activate localized offline events (Pop-up Galleries) without inventory risk, saturating these value-bubbles before larger aggregators can react.</p>
                                     </div>
                                 </div>
@@ -406,7 +410,7 @@
             new Chart(document.getElementById('shareChart').getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['1stDibs', 'Saatchi Art', 'Uncommon Goods', '4AP Gap'],
+                    labels: ['1stDibs', 'Saatchi Art', 'Uncommon Goods', '4AP Boutique Gap'],
                     datasets: [{
                         data: [40, 25, 20, 15],
                         backgroundColor: ['#1a1a1a', '#4b5563', '#9ca3af', '#c50000'],
@@ -422,7 +426,7 @@
                     labels: ['New York', 'California', 'Florida'],
                     datasets: [
                         { label: 'Market Leaders', data: [85, 90, 70], backgroundColor: '#1a1a1a', barThickness: 30 },
-                        { label: '4AP Opportunity', data: [15, 10, 30], backgroundColor: '#c50000', barThickness: 30 }
+                        { label: '4AP Opportunity Index', data: [15, 10, 30], backgroundColor: '#c50000', barThickness: 30 }
                     ]
                 },
                 options: { maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100 } } }
@@ -444,8 +448,8 @@
                 options: {
                     maintainAspectRatio: false,
                     scales: {
-                        x: { min: 0, max: 110, title: { display: true, text: 'Catalog Breadth (SKU Count Index)' } },
-                        y: { min: 0, max: 110, title: { display: true, text: 'Average Ticket Value (AOV Index)' } }
+                        x: { min: 0, max: 110, title: { display: true, text: 'Scale Index (Catalog SKUs)' } },
+                        y: { min: 0, max: 110, title: { display: true, text: 'Value Index (Avg Ticket)' } }
                     }
                 }
             });
@@ -459,8 +463,8 @@
                     datasets: [
                         { label: 'Organic SEO', data: [55, 45, 5, 25, 20, 25], backgroundColor: '#1a1a1a' },
                         { label: 'Paid Media', data: [15, 35, 5, 25, 15, 25], backgroundColor: '#c50000' },
-                        { label: 'Social Drop / Hype', data: [10, 5, 80, 40, 15, 40], backgroundColor: '#4b5563' },
-                        { label: 'Direct / Referrals', data: [20, 15, 10, 10, 50, 10], backgroundColor: '#9ca3af' }
+                        { label: 'Social Hype', data: [10, 5, 80, 40, 15, 40], backgroundColor: '#4b5563' },
+                        { label: 'Direct Retention', data: [20, 15, 10, 10, 50, 10], backgroundColor: '#9ca3af' }
                     ]
                 },
                 options: {
@@ -476,7 +480,7 @@
             const sidebar = document.getElementById('aiSidebar');
             const responseArea = document.getElementById('aiResponse');
             if(!sidebar.classList.contains('open')) toggleAi();
-            responseArea.innerHTML = '<div class="flex flex-col items-center justify-center h-64 gap-6"><div class="loader"></div><p class="text-[9px] font-black uppercase tracking-[0.4em] text-gray-400">Synthesizing Brief...</p></div>';
+            responseArea.innerHTML = '<div class="flex flex-col items-center justify-center h-64 gap-6"><div class="loader"></div><p class="text-[9px] font-black uppercase tracking-[0.4em] text-gray-400">Synthesizing Advisory...</p></div>';
             setTimeout(() => {
                 const insight = advisoryCounsel[target] || advisoryCounsel['Global'];
                 responseArea.innerHTML = `
@@ -484,6 +488,10 @@
                         <p class="text-[#c50000] font-black text-[10px] uppercase mb-6 tracking-widest border-b pb-2">Vortexian Strategic Advisory: ${target}</p>
                         <div class="prose prose-sm font-medium text-gray-700 leading-relaxed italic">
                             ${insight.replace(/\. /g, '.<br><br>')}
+                        </div>
+                        <div class="mt-10 p-4 border-l-2 border-black bg-gray-50">
+                            <p class="text-[9px] font-black uppercase mb-1">Contextual Insight</p>
+                            <p class="text-[11px]">Analysis derived from current market modeling and premium sector behavior mapping.</p>
                         </div>
                     </div>
                 `;
