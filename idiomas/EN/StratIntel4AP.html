@@ -3,467 +3,426 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4AP Intelligence Sheets | 2026 Strategy</title>
+    <title>4AP Intelligence Hub | 2025 Market Strategy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --4ap-red: #c50000;
             --4ap-black: #1a1a1a;
-            --4ap-grey: #4a4a4a;
-            --sheet-border: #e2e8f0;
-            --sheet-header: #f8fafc;
+            --4ap-grey: #4b5563;
+            --4ap-bg: #ffffff;
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: #f1f5f9;
-            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--4ap-bg);
+            color: var(--4ap-black);
+            margin: 0;
             overflow: hidden;
-            color: var(--4ap-black);
         }
 
-        .sheet-container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            background: white;
+        .header-border {
+            border-bottom: 3px solid var(--4ap-red);
         }
 
-        /* Top Header - Toolbar */
-        .toolbar {
-            background: white;
-            border-bottom: 1px solid var(--sheet-border);
-            padding: 8px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand-title {
-            color: var(--4ap-red);
-            font-weight: 900;
-            font-size: 1.25rem;
-            letter-spacing: -0.05em;
-            margin-right: 24px;
-        }
-
-        .doc-name {
-            font-weight: 500;
-            font-size: 14px;
-            color: var(--4ap-black);
-        }
-
-        /* Grid UI */
-        .grid-header-row {
-            background: var(--sheet-header);
-            border-bottom: 1px solid var(--sheet-border);
-            display: flex;
-            height: 32px;
-            align-items: center;
-        }
-
-        .cell-index {
-            width: 40px;
-            border-right: 1px solid var(--sheet-border);
-            text-align: center;
-            font-size: 11px;
-            color: #64748b;
-            background: #f1f5f9;
-        }
-
-        .column-label {
-            flex: 1;
-            text-align: center;
-            font-size: 12px;
-            color: #64748b;
-            border-right: 1px solid var(--sheet-border);
-            text-transform: uppercase;
-        }
-
-        /* Tab Navigation */
-        .tab-bar {
-            background: #f8fafc;
-            border-top: 1px solid var(--sheet-border);
-            display: flex;
-            padding: 0 16px;
-            height: 40px;
-            align-items: center;
-        }
-
-        .tab-button {
-            padding: 8px 16px;
-            font-size: 13px;
-            font-weight: 500;
-            border-bottom: 3px solid transparent;
+        .nav-tab {
+            padding: 12px 24px;
             cursor: pointer;
-            color: #64748b;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--4ap-grey);
+            border-bottom: 4px solid transparent;
+            transition: all 0.3s ease;
         }
 
-        .tab-button.active {
+        .nav-tab.active {
             color: var(--4ap-red);
             border-bottom-color: var(--4ap-red);
-            background: white;
         }
 
-        .content-pane {
-            flex: 1;
-            overflow-y: auto;
-            background: #f8fafc;
-        }
-
-        /* Visualization Cards */
         .card {
             background: white;
-            border: 1px solid var(--sheet-border);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin: 20px;
-            padding: 24px;
+            border: 1px solid #e5e7eb;
+            padding: 2rem;
+            border-radius: 0;
+            transition: box-shadow 0.3s ease;
         }
 
-        .table-luxe {
-            width: 100%;
-            border-collapse: collapse;
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
         }
 
-        .table-luxe th {
-            text-align: left;
-            padding: 12px;
-            font-size: 12px;
-            text-transform: uppercase;
-            color: var(--4ap-red);
-            border-bottom: 2px solid var(--4ap-red);
-        }
-
-        .table-luxe td {
-            padding: 12px;
-            border-bottom: 1px solid var(--sheet-border);
-            font-size: 14px;
-        }
-
-        /* AI Assistant Style */
-        .ai-sidebar {
-            width: 350px;
-            background: white;
-            border-left: 1px solid var(--sheet-border);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
-
-        .ai-header {
-            padding: 16px;
-            background: var(--4ap-red);
+        .btn-spark {
+            background-color: var(--4ap-red);
             color: white;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .ai-content {
-            padding: 20px;
-            flex: 1;
-            overflow-y: auto;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .spark-btn {
-            background: var(--4ap-red);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 4px;
+            padding: 8px 16px;
+            font-weight: 800;
             font-size: 11px;
-            font-weight: 700;
             text-transform: uppercase;
-            cursor: pointer;
+            letter-spacing: 0.05em;
             transition: opacity 0.2s;
         }
 
-        .spark-btn:hover { opacity: 0.8; }
+        .btn-spark:hover {
+            opacity: 0.9;
+        }
+
+        /* AI Sidebar */
+        .ai-sidebar {
+            width: 400px;
+            border-left: 1px solid #e5e7eb;
+            background: #fdfdfd;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            z-index: 50;
+        }
+
+        .ai-sidebar.open {
+            transform: translateX(0);
+        }
 
         .loader {
             border: 2px solid #f3f3f3;
             border-top: 2px solid var(--4ap-red);
             border-radius: 50%;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             animation: spin 1s linear infinite;
-            display: inline-block;
         }
 
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; }
     </style>
 </head>
-<body>
+<body class="flex flex-col h-screen">
 
-<div class="sheet-container">
-    <!-- Top Toolbar -->
-    <div class="toolbar">
-        <div class="flex items-center">
-            <span class="brand-title">4AP</span>
-            <div class="h-4 w-px bg-slate-200 mr-4"></div>
-            <span class="doc-name">Market_Intelligence_Battleground_2026</span>
-            <span class="ml-4 px-2 py-0.5 bg-slate-100 text-[10px] font-bold rounded">READ ONLY</span>
+    <!-- Top Navigation -->
+    <header class="header-border px-8 py-6 flex justify-between items-center bg-white z-40">
+        <div class="flex items-center gap-8">
+            <h1 class="text-4xl font-black tracking-tighter text-[#c50000]">4AP</h1>
+            <div class="h-8 w-px bg-gray-200"></div>
+            <div class="flex gap-2">
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Strategic Intelligence Hub</span>
+                <span class="text-xs font-black text-gray-800 uppercase">FY 2025</span>
+            </div>
         </div>
-        <div class="flex gap-4">
-            <button onclick="askAI('Generate an executive summary of the current market state.')" class="bg-black text-white px-4 py-1 rounded text-xs font-bold hover:bg-slate-800 transition">
-                <i class="fa-solid fa-sparkles mr-2"></i> GEN SUMMARY
+        <div class="flex items-center gap-6">
+            <button onclick="toggleAi()" class="text-xs font-black uppercase tracking-widest hover:text-[#c50000] transition">
+                <i class="fa-solid fa-sparkles mr-2"></i> Strategy Assistant
             </button>
-            <div class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center text-xs font-bold">JD</div>
+            <div class="w-10 h-10 bg-black text-white flex items-center justify-center font-bold">NY</div>
         </div>
-    </div>
+    </header>
 
-    <!-- Sheet Tabs -->
-    <div class="flex flex-1 overflow-hidden">
-        <div class="flex-grow flex flex-col">
-            <!-- Sheet View -->
-            <div id="activeContent" class="content-pane">
-                <!-- Content injected here via JS -->
-            </div>
+    <!-- Tab Selection -->
+    <nav class="bg-white px-8 flex border-b border-gray-100">
+        <div class="nav-tab active" onclick="switchTab('overview', this)">Executive Overview</div>
+        <div class="nav-tab" onclick="switchTab('battleground', this)">Market Battleground</div>
+        <div class="nav-tab" onclick="switchTab('digital', this)">Digital Acquisition</div>
+        <div class="nav-tab" onclick="switchTab('narrative', this)">The Verdict</div>
+    </nav>
 
-            <!-- Tab Bar -->
-            <div class="tab-bar">
-                <div class="tab-button active" onclick="switchTab('summary')"><i class="fa-solid fa-table"></i> Summary Dashboard</div>
-                <div class="tab-button" onclick="switchTab('battleground')"><i class="fa-solid fa-swords"></i> Battleground 2025</div>
-                <div class="tab-button" onclick="switchTab('digital')"><i class="fa-solid fa-chart-line"></i> Digital Traffic</div>
-                <div class="tab-button" onclick="switchTab('narrative')"><i class="fa-solid fa-quote-left"></i> Strategic Narrative</div>
+    <!-- Main Content Area -->
+    <main id="mainContent" class="flex-grow overflow-y-auto p-8 bg-gray-50/30">
+        <!-- Content will be injected here -->
+    </main>
+
+    <!-- Gemini AI Assistant Sidebar -->
+    <aside id="aiSidebar" class="ai-sidebar shadow-2xl">
+        <div class="p-6 bg-[#c50000] text-white flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-brain"></i>
+                <span class="font-black uppercase tracking-tighter text-lg">Strategy Spark</span>
             </div>
+            <button onclick="toggleAi()" class="text-white/70 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
         </div>
-
-        <!-- AI Assistant Sidebar -->
-        <div id="aiSidebar" class="ai-sidebar">
-            <div class="ai-header">
-                <i class="fa-solid fa-robot"></i>
-                <span>NY STRATEGY COMMAND</span>
-                <button onclick="toggleSidebar()" class="ml-auto text-white/50 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div id="aiResponse" class="ai-content text-slate-600">
-                <em>Select a 'Strategy Spark' in any cell to trigger a deep analysis from the NY office.</em>
-            </div>
+        <div id="aiResponse" class="p-8 flex-grow overflow-y-auto text-sm leading-relaxed text-gray-700">
+            <p class="italic text-gray-400">Select an insight marker or use the 'Gen Summary' button to activate the NY Strategy Command.</p>
         </div>
-    </div>
-</div>
+        <div class="p-6 border-t bg-gray-50 text-center">
+            <button onclick="askGemini('Generate an executive summary of 4AP status in the US market.')" class="w-full bg-black text-white py-3 font-bold text-xs uppercase tracking-widest hover:bg-[#c50000] transition">
+                Gen Global Summary
+            </button>
+        </div>
+    </aside>
 
-<script>
-    let currentTab = 'summary';
-    let charts = {};
+    <script>
+        let currentTab = 'overview';
+        const apiKey = ""; // API Key handle
 
-    const COLORS = {
-        red: '#c50000',
-        black: '#1a1a1a',
-        grey: '#4a4a4a',
-        light: '#f1f5f9'
-    };
-
-    function switchTab(tabId) {
-        currentTab = tabId;
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        event.currentTarget.classList.add('active');
-        renderTabContent();
-    }
-
-    function renderTabContent() {
-        const container = document.getElementById('activeContent');
-        
-        if (currentTab === 'summary') {
-            container.innerHTML = `
-                <div class="p-8">
-                    <h2 class="text-2xl font-black uppercase mb-6 tracking-tighter">US Market Penetration Overview</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="card">
-                            <div class="flex justify-between items-center mb-4">
-                                <h3 class="font-bold">US Market Distribution (Estimated)</h3>
-                                <button onclick="askAI('Analyze the current US market share and the 15% boutique opportunity.')" class="spark-btn">Spark ✨</button>
-                            </div>
-                            <div class="h-[300px]"><canvas id="pieChart"></canvas></div>
-                        </div>
-                        <div class="card">
-                            <div class="flex justify-between items-center mb-4">
-                                <h3 class="font-bold">The Power Triad: State Concentration</h3>
-                                <button onclick="askAI('Why is Florida the blue ocean for 4AP right now?')" class="spark-btn">Spark ✨</button>
-                            </div>
-                            <div class="h-[300px]"><canvas id="barChart"></canvas></div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            initSummaryCharts();
-        } else if (currentTab === 'battleground') {
-            container.innerHTML = `
-                <div class="p-8">
-                    <h2 class="text-2xl font-black uppercase mb-6 tracking-tighter">SKU Portfolio & Competitor Matrix</h2>
-                    <div class="card">
-                        <table class="table-luxe">
-                            <thead>
-                                <tr>
-                                    <th>Competitor</th>
-                                    <th>SKU Breadth</th>
-                                    <th>SKU Depth</th>
-                                    <th>Avg Ticket (AOV)</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>1stDibs</strong></td>
-                                    <td>Infinite (1M+)</td>
-                                    <td>High (Antique)</td>
-                                    <td class="font-bold">$8,500</td>
-                                    <td><button onclick="askAI('What can we steal from 1stDibs trust model?')" class="spark-btn">Spark</button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Saatchi Art</strong></td>
-                                    <td>High (500k+)</td>
-                                    <td>Broad (Contemp)</td>
-                                    <td class="font-bold">$1,200</td>
-                                    <td><button onclick="askAI('How to beat Saatchi in CA without their budget?')" class="spark-btn">Spark</button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Uncommon Goods</strong></td>
-                                    <td>Moderate (5k+)</td>
-                                    <td>Mass Premium</td>
-                                    <td class="font-bold">$145</td>
-                                    <td><button onclick="askAI('Generate a gift-guide campaign hook better than Uncommon Goods.')" class="spark-btn">Spark</button></td>
-                                </tr>
-                                <tr class="bg-slate-50">
-                                    <td class="text-[#c50000] font-black">4AP (TARGET)</td>
-                                    <td>Curated (Niche)</td>
-                                    <td>Heritage Vertical</td>
-                                    <td class="font-bold text-[#c50000]">$2,200</td>
-                                    <td><button onclick="askAI('What is the ideal AOV for 4AP in 2026?')" class="spark-btn">Spark</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            `;
-        } else if (currentTab === 'digital') {
-            container.innerHTML = `
-                <div class="p-8">
-                    <h2 class="text-2xl font-black uppercase mb-6 tracking-tighter">Digital Traffic Acquisition</h2>
-                    <div class="card max-w-4xl">
-                        <div class="flex justify-between mb-4">
-                            <h3 class="font-bold">Channel Breakdown by Player</h3>
-                            <button onclick="askAI('Explain the Joopiter Social-Drop model and how 4AP can use it.')" class="spark-btn">Spark ✨</button>
-                        </div>
-                        <div class="h-[400px]"><canvas id="acquisitionChart"></canvas></div>
-                    </div>
-                </div>
-            `;
-            initDigitalCharts();
-        } else if (currentTab === 'narrative') {
-            container.innerHTML = `
-                <div class="p-8">
-                    <h2 class="text-2xl font-black uppercase mb-6 tracking-tighter">Strategic Insights: The Analyst's Verdict</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="card border-l-8 border-[#c50000]">
-                            <h3 class="font-black text-xl mb-4">THE PARADOX OF CHOICE</h3>
-                            <p class="text-lg italic leading-relaxed mb-6">"Our strength is our curation. While 1stDibs sells a warehouse, 4AP sells an identity. We don't overwhelm; we resolve the buyer's tension."</p>
-                            <button onclick="askAI('Write a 30-second elevator pitch based on the Paradox of Choice for a NY investor.')" class="spark-btn">Elevator Pitch ✨</button>
-                        </div>
-                        <div class="card">
-                            <h3 class="font-black text-xl mb-4">THE NY VERDICT</h3>
-                            <div class="space-y-4 text-sm">
-                                <p><strong>1. Florida First:</strong> Saturate the diaspora. They are your most loyal high-LTV segment.</p>
-                                <p><strong>2. The Drop Model:</strong> Move art prints as "Events" in NY/CA to drive urgency.</p>
-                                <p><strong>3. Heritage Premium:</strong> Never compromise on the artist story. The "Frank Alcock" brand is the moat.</p>
-                            </div>
-                            <button onclick="askAI('Critique this strategy. Is it too aggressive for 2025?')" class="spark-btn mt-6">Get Critique ✨</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-    }
-
-    function initSummaryCharts() {
-        const pieCtx = document.getElementById('pieChart').getContext('2d');
-        new Chart(pieCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['1stDibs', 'Saatchi', 'Uncommon Goods', '4AP Opportunity'],
-                datasets: [{
-                    data: [40, 25, 20, 15],
-                    backgroundColor: [COLORS.black, COLORS.grey, '#8a8a8a', COLORS.red],
-                    borderWidth: 0
-                }]
-            },
-            options: { maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
-        });
-
-        const barCtx = document.getElementById('barChart').getContext('2d');
-        new Chart(barCtx, {
-            type: 'bar',
-            data: {
-                labels: ['NY', 'CA', 'FL'],
-                datasets: [
-                    { label: 'Incumbents', data: [85, 90, 70], backgroundColor: COLORS.black },
-                    { label: '4AP Penetration', data: [15, 10, 30], backgroundColor: COLORS.red }
-                ]
-            },
-            options: { maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100 } } }
-        });
-    }
-
-    function initDigitalCharts() {
-        const acqCtx = document.getElementById('acquisitionChart').getContext('2d');
-        new Chart(acqCtx, {
-            type: 'bar',
-            data: {
-                labels: ['1stDibs', 'Saatchi', 'Joopiter', 'Uncommon Goods'],
-                datasets: [
-                    { label: 'SEO/Organic', data: [65, 55, 10, 20], backgroundColor: COLORS.black },
-                    { label: 'Social/Hype', data: [10, 15, 80, 15], backgroundColor: COLORS.red },
-                    { label: 'Email/Retention', data: [15, 20, 5, 50], backgroundColor: COLORS.grey }
-                ]
-            },
-            options: { 
-                indexAxis: 'y',
-                maintainAspectRatio: false, 
-                scales: { x: { stacked: true }, y: { stacked: true } }
-            }
-        });
-    }
-
-    // --- GEMINI API INTEGRATION ---
-    async function askAI(prompt) {
-        const responseArea = document.getElementById('aiResponse');
-        responseArea.innerHTML = '<div class="flex justify-center py-8"><div class="loader"></div></div>';
-        
-        const apiKey = ""; // Runtime provides this
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-
-        const payload = {
-            contents: [{ parts: [{ text: prompt }] }],
-            systemInstruction: {
-                parts: [{ text: "You are a Senior Market Analyst in New York for 4ArtPartners. Your tone is like Don Draper: persuasive, elite, and data-driven. Always respond in professional Spanish as requested by the user, but maintain the NY business spirit." }]
-            }
+        // --- DATA SETS ---
+        const marketShareData = {
+            labels: ['1stDibs', 'Saatchi Art', 'Uncommon Goods', '4AP Opportunity'],
+            values: [40, 25, 20, 15]
         };
 
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            const data = await response.json();
-            const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "No se pudo generar una respuesta.";
-            responseArea.innerHTML = `<div class="bg-slate-50 p-4 rounded border-l-4 border-red-600 font-medium">${text}</div>`;
-        } catch (err) {
-            responseArea.innerHTML = `<p class="text-red-500">Error: No se pudo contactar con la oficina de NY. Inténtalo de nuevo.</p>`;
+        const triadData = {
+            labels: ['New York', 'California', 'Florida'],
+            incumbents: [85, 90, 70],
+            fourAP: [15, 10, 30]
+        };
+
+        const battlegroundData = [
+            { name: '1stDibs', breadth: 'Infinite', depth: 'High', aov: '$8,500', focus: 'Trust & Antiques' },
+            { name: 'Saatchi Art', breadth: 'High', depth: 'Broad', aov: '$1,200', focus: 'SEO & Scale' },
+            { name: 'Joopiter', breadth: 'Low', depth: 'Niche', aov: '$12,000', focus: 'Hype Drops' },
+            { name: 'Uncommon Goods', breadth: 'Moderate', depth: 'Gifting', aov: '$145', focus: 'Storytelling' },
+            { name: '4AP', breadth: 'Curated', depth: 'Identity', aov: '$2,200', focus: 'Heritage Luxury' },
+        ];
+
+        // --- UI CONTROLS ---
+        function switchTab(tabId, el) {
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            currentTab = tabId;
+            render();
         }
-    }
 
-    window.onload = () => {
-        renderTabContent();
-    };
-</script>
+        function toggleAi() {
+            document.getElementById('aiSidebar').classList.toggle('open');
+        }
 
+        function render() {
+            const container = document.getElementById('mainContent');
+            container.innerHTML = '';
+
+            if (currentTab === 'overview') {
+                container.innerHTML = `
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2 space-y-8">
+                            <div class="card border-l-8 border-[#c50000]">
+                                <h3 class="text-xl font-black uppercase mb-4 tracking-tight">The "Power Triad" Concentration</h3>
+                                <p class="text-sm text-gray-500 mb-6">Our 147 sales analysis reveals a massive concentration in NY, CA, and FL. Florida represents our highest organic penetration gap.</p>
+                                <div class="h-[350px]"><canvas id="triadChart"></canvas></div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                ${['NY - Intellectual Status', 'FL - Heritage Social', 'CA - Aesthetic Calm'].map(t => `
+                                    <div class="card p-6 bg-white border border-gray-100">
+                                        <h4 class="font-black text-[#c50000] text-xs mb-2 uppercase">${t.split(' - ')[0]}</h4>
+                                        <p class="text-xs font-bold mb-4">${t.split(' - ')[1]}</p>
+                                        <button onclick="askGemini('Generate a copy for ${t}')" class="text-[10px] font-bold uppercase text-gray-400 hover:text-[#c50000]">Spark Strategy <i class="fa-solid fa-sparkles ml-1"></i></button>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="card">
+                                <h3 class="text-xl font-black uppercase mb-4 tracking-tight">US Market Share</h3>
+                                <div class="h-[300px]"><canvas id="shareChart"></canvas></div>
+                                <div class="mt-6 p-4 bg-gray-50 text-[11px] leading-relaxed">
+                                    <strong>Analyst Note:</strong> The 15% boutique opportunity is our playground. We don't compete with the 40% (1stDibs) on history, we compete on <strong>Identity</strong>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                initOverviewCharts();
+            } else if (currentTab === 'battleground') {
+                container.innerHTML = `
+                    <div class="space-y-8 animate-in fade-in duration-500">
+                        <h2 class="text-3xl font-black uppercase tracking-tighter">Market Battleground 2025</h2>
+                        <div class="card overflow-hidden p-0">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50 border-b">
+                                    <tr>
+                                        <th class="p-6 text-xs font-black uppercase text-gray-400">Competitor</th>
+                                        <th class="p-6 text-xs font-black uppercase text-gray-400">SKU Breadth</th>
+                                        <th class="p-6 text-xs font-black uppercase text-gray-400">SKU Depth</th>
+                                        <th class="p-6 text-xs font-black uppercase text-gray-400">Avg Ticket</th>
+                                        <th class="p-6 text-xs font-black uppercase text-gray-400">Core Strategy</th>
+                                        <th class="p-6"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${battlegroundData.map(d => `
+                                        <tr class="border-b hover:bg-gray-50/50 transition">
+                                            <td class="p-6 font-bold ${d.name === '4AP' ? 'text-[#c50000]' : ''}">${d.name}</td>
+                                            <td class="p-6 text-sm">${d.breadth}</td>
+                                            <td class="p-6 text-sm">${d.depth}</td>
+                                            <td class="p-6 font-black">${d.aov}</td>
+                                            <td class="p-6 text-sm italic">${d.focus}</td>
+                                            <td class="p-6"><button onclick="askGemini('Analyze ${d.name} vulnerability vs 4AP')" class="btn-spark">Spark ✨</button></td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="card bg-[#1a1a1a] text-white">
+                                <h4 class="text-[#c50000] font-black uppercase mb-4">The SKU Paradox</h4>
+                                <p class="text-sm leading-relaxed text-gray-300 italic">"1stDibs sells a warehouse; 4AP sells a legacy. Curation is the ultimate defense against market saturation."</p>
+                            </div>
+                            <div class="card border-2 border-dashed border-gray-200 flex flex-col justify-center items-center text-center">
+                                <p class="text-xs font-bold uppercase text-gray-400 mb-2">Portfolio Insight</p>
+                                <p class="text-sm font-bold">4AP high AOV (Avg. Ticket) is driven by the "Prestige On-Demand" model.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentTab === 'digital') {
+                container.innerHTML = `
+                    <div class="max-w-4xl mx-auto space-y-8 animate-in slide-in-from-bottom duration-500">
+                        <div class="card">
+                            <h3 class="text-2xl font-black uppercase mb-8 text-[#c50000]">Digital Acquisition & Traffic Flow</h3>
+                            <div class="h-[400px]"><canvas id="digitalChart"></canvas></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="card">
+                                <h4 class="font-black text-xs uppercase mb-2">The SEO Trap</h4>
+                                <p class="text-xs text-gray-500">Competing with Saatchi on "Art for Sale" is a losing game. 4AP must own "Heritage Minimalist Decor".</p>
+                            </div>
+                            <div class="card">
+                                <h4 class="font-black text-xs uppercase mb-2">The Social Edge</h4>
+                                <p class="text-xs text-gray-500">Joopiter proves that scarcity drives traffic better than search. 4AP "Drops" are the key to CA/NY engagement.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                initDigitalChart();
+            } else if (currentTab === 'narrative') {
+                container.innerHTML = `
+                    <div class="max-w-3xl mx-auto py-12 space-y-12 animate-in fade-in duration-700">
+                        <div class="text-center">
+                            <h2 class="text-5xl font-black uppercase tracking-tighter mb-4">The <span class="text-[#c50000]">Verdict</span></h2>
+                            <p class="text-xl font-light text-gray-400">NY Strategy Memo | Senior Analyst Counsel</p>
+                        </div>
+                        <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                            <p class="italic border-l-4 border-[#c50000] pl-8">"Identity is the only currency that doesn't inflate. While others sell furniture, 4AP sells a cure for homesickness for the modern diaspora."</p>
+                            <div class="space-y-6">
+                                <div class="card hover:border-[#c50000] transition">
+                                    <h4 class="font-black text-[#c50000] mb-2">1. FLORIDA IS THE CROWN JEWEL</h4>
+                                    <p class="text-sm">Saturate the 'Westonzuela' and Boca enclaves. These aren't buyers; they are ambassadors. Hosting culture is our Trojan Horse.</p>
+                                </div>
+                                <div class="card hover:border-[#c50000] transition">
+                                    <h4 class="font-black text-[#c50000] mb-2">2. THE PRESTIGE ON-DEMAND MODEL</h4>
+                                    <p class="text-sm">Keep inventory low, desire high. The 'Made-to-Order' tag isn't a logistics constraint—it's an exclusivity feature.</p>
+                                </div>
+                                <div class="card hover:border-[#c50000] transition">
+                                    <h4 class="font-black text-[#c50000] mb-2">3. NEW YORK AS THE EGO-MARKET</h4>
+                                    <p class="text-sm">In NY, we sell the intellectual 'why'. The prints are the entry point; the porcelain is the legacy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center pt-8">
+                             <p class="font-black text-xs uppercase tracking-[0.5em] text-gray-300">End of Briefing</p>
+                             <p class="font-bold mt-2">D.D. | 2026</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // --- CHART INITIALIZERS ---
+        function initOverviewCharts() {
+            const shareCtx = document.getElementById('shareChart').getContext('2d');
+            new Chart(shareCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: marketShareData.labels,
+                    datasets: [{
+                        data: marketShareData.values,
+                        backgroundColor: ['#1a1a1a', '#4b5563', '#9ca3af', '#c50000'],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: { maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { font: { size: 10, weight: 'bold' }, padding: 20 } } } }
+            });
+
+            const triadCtx = document.getElementById('triadChart').getContext('2d');
+            new Chart(triadCtx, {
+                type: 'bar',
+                data: {
+                    labels: triadData.labels,
+                    datasets: [
+                        { label: 'Market Incumbents', data: triadData.incumbents, backgroundColor: '#1a1a1a' },
+                        { label: '4AP Penetration %', data: triadData.fourAP, backgroundColor: '#c50000' }
+                    ]
+                },
+                options: { 
+                    maintainAspectRatio: false, 
+                    scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } },
+                    plugins: { legend: { position: 'top', align: 'end' } }
+                }
+            });
+        }
+
+        function initDigitalChart() {
+            const ctx = document.getElementById('digitalChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['1stDibs', 'Saatchi Art', 'Joopiter', '4AP Target'],
+                    datasets: [
+                        { label: 'Organic SEO', data: [70, 60, 10, 30], backgroundColor: '#1a1a1a' },
+                        { label: 'Social Drop / Scarcity', data: [10, 15, 80, 50], backgroundColor: '#c50000' },
+                        { label: 'Paid / Direct', data: [20, 25, 10, 20], backgroundColor: '#9ca3af' }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    maintainAspectRatio: false,
+                    scales: { x: { stacked: true }, y: { stacked: true } },
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+        }
+
+        // --- GEMINI API INTEGRATION ---
+        async function askGemini(prompt) {
+            const aiSidebar = document.getElementById('aiSidebar');
+            const responseArea = document.getElementById('aiResponse');
+            
+            if(!aiSidebar.classList.contains('open')) toggleAi();
+            
+            responseArea.innerHTML = '<div class="flex flex-col items-center justify-center h-48 gap-4"><div class="loader"></div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Consulting NY HQ...</p></div>';
+            
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: {
+                    parts: [{ text: "You are a Senior Market Analyst and Strategist in Manhattan. Your style is Don Draper: sharp, persuasive, elite, and focused on high-end identity marketing. 4ArtPartners is your client. Use professional NY English. Be concise and authoritative." }]
+                }
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await response.json();
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Communication lost. Try again.";
+                
+                // Fancy formatting
+                responseArea.innerHTML = `<div class="animate-in fade-in duration-700">
+                    <p class="text-[#c50000] font-black text-xs uppercase mb-4 tracking-widest">Memo from NY Office</p>
+                    <div class="prose prose-sm font-medium text-gray-700 leading-relaxed italic">
+                        ${text.replace(/\n/g, '<br>')}
+                    </div>
+                </div>`;
+            } catch (err) {
+                responseArea.innerHTML = '<p class="text-red-600 font-bold">Strategic connection failed. Check your link.</p>';
+            }
+        }
+
+        // Initial Boot
+        window.onload = render;
+    </script>
 </body>
 </html>
