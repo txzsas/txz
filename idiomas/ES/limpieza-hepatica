@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Limpieza Hepática | Protocolo Moritz</title>
+    <style>
+        :root {
+            /* Paleta inspirada en Medicina China (Madera/Hígado) y Ayurveda (Equilibrio) */
+            --primary-green: #2E5C46; /* Verde Bosque profundo - Nutrición del hígado */
+            --secondary-green: #A3C9A8; /* Verde Jade suave - Calma */
+            --bg-cream: #FDFBF7; /* Crema Papiro - Naturalidad */
+            --text-dark: #2C3E50; /* Gris Oscuro - Legibilidad */
+            --accent-gold: #D4AC0D; /* Dorado/Bilis - Transformación */
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-green), #1a4031);
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(46, 92, 70, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Tarjetas y Secciones */
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-green);
+        }
+
+        h2 {
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+        }
+
+        h2::before {
+            content: '🌿';
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-green);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Lista de Compras */
+        .shopping-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .shopping-item {
+            background: var(--bg-cream);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            border: 1px solid var(--secondary-green);
+        }
+
+        .check-icon {
+            color: var(--primary-green);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Timeline para el Día 6 */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid var(--secondary-green);
+            margin-top: 1rem;
+        }
+
+        .time-slot {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .time-slot::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+        }
+
+        .time {
+            font-weight: bold;
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        /* Botones y Enlaces */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #1a4031;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Alertas */
+        .alert {
+            background-color: #FFF3E0;
+            border-left: 5px solid var(--accent-gold);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-green);
+            color: var(--white);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .card { padding: 1.5rem; }
+            .timeline { padding-left: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Limpieza Hepática</h1>
+        <p>Protocolo natural basado en Andreas Moritz para renovar tu energía y bienestar.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>¿En qué consiste?</h2>
+            <p>Este es un proceso de desintoxicación profunda diseñado para descongestionar el hígado y la vesícula biliar. Mediante ingredientes naturales, se busca suavizar y expulsar los cálculos (piedras de colesterol y bilis) que obstruyen el flujo natural de energía y digestión en tu cuerpo.</p>
+            <div class="alert">
+                <strong>Nota:</strong> Este protocolo requiere compromiso durante 7 días. Los primeros 5 días son de preparación y se puede hacer vida normal. El día 6 y 7 requieren estar en casa.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Lista de Compras (Colombia)</h2>
+            <p style="margin-bottom: 1rem;">Consigue estos ingredientes en supermercados (Éxito, Carulla, D1), plazas de mercado o tiendas naturistas.</p>
+            <ul class="shopping-list">
+                <li class="shopping-item">
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>Jugo de Manzana (6 Litros)</strong><br>
+                        <small>O Ácido Málico en polvo si tienes diabetes/cándida.</small>
+                    </div>
+                </li>
+                <li class="shopping-item">
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>Sales de Epsom (60g)</strong><br>
+                        <small>Sulfato de Magnesio. Se consigue en droguerías.</small>
+                    </div>
+                </li>
+                <li class="shopping-item">
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>Aceite de Oliva (125ml)</strong><br>
+                        <small>Extra virgen, prensado en frío.</small>
+                    </div>
+                </li>
+                <li class="shopping-item">
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>Toronjas Rosadas (2 grandes)</strong><br>
+                        <small>Necesitas sacar 3/4 de taza de jugo fresco.</small>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="btn-group">
+                <a href="https://listado.mercadolibre.com.co/sales-epsom" target="_blank" class="btn btn-outline">Buscar Sales de Epsom</a>
+                <a href="https://listado.mercadolibre.com.co/acido-malico" target="_blank" class="btn btn-outline">Buscar Ácido Málico</a>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Fase 1: Preparación (Días 1 al 5)</h2>
+            <p>El objetivo es <strong>ablandar las piedras</strong>. Sin esta fase, la limpieza puede ser dolorosa o no funcionar.</p>
+            <ul>
+                <li>🍏 <strong>Bebe 1 Litro de jugo de manzana al día:</strong> Tómalo poco a poco, lejos de las comidas (2 horas después de comer o 30 min antes).</li>
+                <li>🧊 <strong>Evita lo frío:</strong> No bebas agua helada ni alimentos refrigerados. El hígado necesita calor (Yang) para trabajar.</li>
+                <li>🥩 <strong>Dieta ligera:</strong> Reduce carnes, lácteos y fritos. Prefiere dieta vegetariana y caliente (sopas, guisos).</li>
+            </ul>
+        </section>
+
+        <section class="card" style="border-left-color: var(--accent-gold);">
+            <h2 style="color: var(--accent-gold);">Fase 2: El Día de la Limpieza (Día 6)</h2>
+            <p>Si el día 6 cae en fin de semana, mejor. Sigue los horarios <strong>estrictamente</strong>.</p>
+            
+            <h3>La Mañana</h3>
+            <p>Desayuno y almuerzo muy ligeros (arroz blanco, verduras al vapor). <strong>CERO GRASAS</strong> (nada de aceite, mantequilla, aguacate, leche o queso). Esto acumula presión en la bilis para expulsar las piedras con fuerza en la noche.</p>
+            
+            <div class="alert" style="text-align: center; font-weight: bold;">
+                ⛔ 1:30 PM: ¡DEJA DE COMER! <br> Solo puedes beber agua a partir de ahora.
+            </div>
+
+            <h3>La Rutina de la Tarde/Noche</h3>
+            <div class="timeline">
+                <div class="time-slot">
+                    <span class="time">6:00 PM</span>
+                    <p><strong>1ª Toma de Sales de Epsom:</strong> Disuelve 4 cucharadas soperas de sales en 3 tazas de agua (total). Bebe ahora la primera porción (3/4 de taza). <br><em>Efecto: Dilata los conductos biliares.</em></p>
+                </div>
+                <div class="time-slot">
+                    <span class="time">8:00 PM</span>
+                    <p><strong>2ª Toma de Sales de Epsom:</strong> Bebe la segunda porción (3/4 de taza).</p>
+                </div>
+                <div class="time-slot">
+                    <span class="time">9:45 PM</span>
+                    <p><strong>Prepara la "Poción":</strong> Mezcla medio vaso (125ml) de aceite de oliva con 3/4 de vaso de jugo de toronja exprimido. Agita fuertemente en un frasco cerrado hasta que se emulsione.</p>
+                </div>
+                <div class="time-slot">
+                    <span class="time">10:00 PM</span>
+                    <p><strong>¡LA TOMA FINAL!</strong> Bebe la mezcla de pie junto a tu cama (en menos de 5 min). <br><strong>¡ACUÉSTATE INMEDIATAMENTE!</strong></p>
+                    <p>Acuéstate boca arriba con la cabeza elevada (usa dos almohadas). Quédate inmóvil y en silencio absoluto por 20 minutos. Visualiza tu hígado limpiándose. ¡Intenta dormir!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Fase 3: La Expulsión (Día 7)</h2>
+            <p>Es probable que tengas que ir al baño temprano. Busca en el inodoro pequeñas piedras flotantes de color verde esmeralda o café claro.</p>
+            
+            <div class="timeline">
+                <div class="time-slot">
+                    <span class="time">6:00 AM</span>
+                    <p><strong>3ª Toma de Sales de Epsom:</strong> Bebe la tercera porción (3/4 de taza). Si tienes sed, toma agua tibia antes.</p>
+                </div>
+                <div class="time-slot">
+                    <span class="time">8:00 AM</span>
+                    <p><strong>4ª Toma de Sales de Epsom:</strong> Bebe la última porción (3/4 de taza). ¡Felicidades, has terminado la parte difícil!</p>
+                </div>
+                <div class="time-slot">
+                    <span class="time">10:00 AM</span>
+                    <p>Ya puedes tomar jugo de fruta fresca.</p>
+                </div>
+                <div class="time-slot">
+                    <span class="time">11:00 AM</span>
+                    <p>Puedes comer fruta sólida o comida muy ligera. Por la noche ya deberías sentirte recuperado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" style="text-align: center;">
+            <h2>Recursos Adicionales</h2>
+            <p>Para entender la teoría completa y los beneficios, consulta el libro original.</p>
+            <br>
+            [cite_start]<a href="#" class="btn" onclick="alert('Asegúrate de subir el PDF a tu repositorio de GitHub para enlazarlo aquí.')">Descargar Libro PDF [cite: 1]</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Descargo de responsabilidad:</strong> Esta guía es informativa basada en el libro de Andreas Moritz. No sustituye el consejo médico profesional. Realice este protocolo bajo su propia responsabilidad.</p>
+        <p style="margin-top:10px; opacity: 0.7;">Hecho con ❤️ para la salud natural.</p>
+    </footer>
+
+</body>
+</html>
